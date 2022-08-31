@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect, useForm } from "react";
+import { useState, useEffect } from "react";
 import axios from "axios";
 import "./login.css";
 const Login = () => {
@@ -20,6 +20,11 @@ const Login = () => {
     } catch (error) {
       console.log(error.message);
     }
+    if (email.trim() === "" || pass.trim() === "") {
+      return;
+    }
+    setEmail("");
+    setPass("");
   };
 
   const gestorEmail = (e) => {
@@ -35,7 +40,7 @@ const Login = () => {
       <form action="#">
         <div className="form-container">
           <div className="label-container">
-            <label>LOGIN</label>
+            <label>ENTRAR</label>
           </div>
           <div className="input-container">
             <input
@@ -46,8 +51,6 @@ const Login = () => {
               onChange={gestorEmail}
               placeholder="EMAIL"
             ></input>
-          </div>
-          <div className="input-container">
             <input
               className="login-form-input"
               type="password"

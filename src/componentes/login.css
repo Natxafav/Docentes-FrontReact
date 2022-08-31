@@ -6,31 +6,50 @@
   border-style: groove;
   border-color: #b9b5b5;
   padding: 1vw;
-  box-shadow: 5px 5px 5px 1px #7e7c7c, 5px 5px 15px 1px #b9b5b5;
+  max-width: 90vw;
+  box-shadow: -10px -10px 3px 1px #7e7c7c;
 }
 .form-container {
   display: flex;
   padding: 2vh;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  min-width: calc(40vw + 3px);
-  min-height: calc(50vh + 3rem);
-  max-height: calc(60vh + 0.2rem);
-  box-shadow: 5px 5px 5px 1px #7e7c7c, 5px 5px 15px 1px #b9b5b5;
+  min-width: 60vw;
+  min-height: 50vh;
+  box-shadow: #b9b5b5 -15px -15px 11px 1px inset,
+    #b9b5b5 -12px -12px 5px 1px inset;
 }
 .label-container {
   font-family: "Courier New", Courier, monospace;
   font-weight: 800;
-  font-size: calc(1.5rem + 1vw);
-  padding: 1.7vh;
+  padding: 0.7em;
+  box-shadow: #b9b5b5 -6px -5px 1px 1px inset;
 }
 .login-form-input {
   font-family: "Courier New", Courier, monospace;
   font-weight: 800;
-  font-size: calc(0.4rem + 0.5vw);
-  max-width: calc(50vw);
-  max-height: fit-content;
+  width: 30vw;
+  max-width: 40vw;
+  max-height: 30vh;
   padding: 0.7vw;
   margin: 10px;
+}
+.input-container {
+  box-shadow: -6px -6px 0 1px #b9b5b5;
+}
+.enviar {
+  min-width: 8em;
+  min-height: 2em;
+  margin: 0.2vh;
+}
+.button-container {
+  width: 63vw;
+  height: 4em;
+}
+.enviar:hover {
+  box-shadow: -3px -1px 0 1px #b9b5b5;
+  background-color: #282c34;
+  color: white;
 }
