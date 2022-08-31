@@ -1,7 +1,7 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useForm } from "react";
 import axios from "axios";
-
+import "./login.css";
 const Login = () => {
   const URL = "http://localhost:5000/api/docentes/login";
   const [email, setEmail] = useState("");
@@ -31,27 +31,38 @@ const Login = () => {
   useEffect(() => {}, []);
 
   return (
-    <div>
+    <div className="login">
       <form action="#">
-        <label>LOGIN</label>
-        <input
-          type="email"
-          name="email"
-          value={email}
-          onChange={gestorEmail}
-          placeholder="EMAIL"
-        ></input>
-        <input
-          type="password"
-          name="name"
-          value={pass}
-          onChange={gestorPass}
-          placeholder="PASSWORD"
-        ></input>
-
-        <button className="enviar" onClick={registro}>
-          LOGIN
-        </button>
+        <div className="form-container">
+          <div className="label-container">
+            <label>LOGIN</label>
+          </div>
+          <div className="input-container">
+            <input
+              className="login-form-input"
+              type="email"
+              name="email"
+              value={email}
+              onChange={gestorEmail}
+              placeholder="EMAIL"
+            ></input>
+          </div>
+          <div className="input-container">
+            <input
+              className="login-form-input"
+              type="password"
+              name="name"
+              value={pass}
+              onChange={gestorPass}
+              placeholder="PASSWORD"
+            ></input>
+          </div>
+          <div className="button-container">
+            <button className="enviar" onClick={registro}>
+              LOGIN
+            </button>
+          </div>
+        </div>
       </form>
     </div>
   );
