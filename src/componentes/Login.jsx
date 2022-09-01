@@ -7,10 +7,9 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
-  const registro = async (e) => {
+  const usuLogin = async (e) => {
     e.preventDefault();
-    console.log(email);
-    console.log(pass);
+
     try {
       const response = await axios.post(URL, {
         email: email,
@@ -38,13 +37,13 @@ const Login = () => {
   return (
     <div className="login">
       <form action="#">
-        <div className="form-container">
-          <div className="label-container">
+        <div className="form-container-login">
+          <div className="label-container-login">
             <label>ENTRAR</label>
           </div>
-          <div className="input-container">
+          <div className="input-container-login">
             <input
-              className="login-form-input"
+              className="form-input-login"
               type="email"
               name="email"
               value={email}
@@ -52,7 +51,7 @@ const Login = () => {
               placeholder="EMAIL"
             ></input>
             <input
-              className="login-form-input"
+              className="form-input-login"
               type="password"
               name="name"
               value={pass}
@@ -60,8 +59,8 @@ const Login = () => {
               placeholder="PASSWORD"
             ></input>
           </div>
-          <div className="button-container">
-            <button className="enviar" onClick={registro}>
+          <div className="button-container-login">
+            <button className="enviar" onClick={usuLogin}>
               LOGIN
             </button>
           </div>
