@@ -1,0 +1,46 @@
+.errorContainer {
+  width: 100vw;
+  height: 100vh;
+  padding: 2vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.error404 {
+  width: 70%;
+  height: 70%;
+  background-image: url(../archivos/ERROR404NOTFOUND.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.mapdocente {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 20px;
+}
+.individuo {
+  height: 30vh;
+  width: 30vw;
+  box-shadow: 1px 1px 3px 1px #7e7c7c;
+}
+.indivData {
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  font-size: 1.4rem;
+}
+.etiquetas {
+  width: 10vw;
+  text-align: left;
+}
+.datoDocente {
+  width: 20vw;
+  text-align: left;
+}

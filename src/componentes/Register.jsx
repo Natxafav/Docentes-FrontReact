@@ -1,11 +1,11 @@
 import React from "react";
 //npm i react-hook-form
-import "./login.css";
+import "./loginRegister.css";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 
 const Register = () => {
-  const URL = "http://localhost:5000/api/docentes/";
+  const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
 
   const {
     setValue,
@@ -16,11 +16,26 @@ const Register = () => {
 
   const usuRegister = async (data) => {
     try {
-      const response = await axios.post(URL, {
-        nombre: data.nombre,
-        email: data.email,
-        password: data.password,
-      });
+      const response = await axios
+        .post(URL, {
+          nombre: data.nombre,
+          email: data.email,
+          password: data.password,
+        })
+        .then((response) => {
+          console.log("login correcto");
+          console.log(response.data);
+          localStorage.setItem(
+            "DatosUsuario",
+            JSON.stringify({
+              userId: response.data.userId,
+              token: response.data.token,
+            })
+          );
+        })
+        .catch((error) => {
+          console.log(error);
+        });
       setValue("nombre", null);
       setValue("email", null);
       setValue("password", null);

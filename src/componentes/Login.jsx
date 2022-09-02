@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import "./login.css";
+import "./loginRegister.css";
 const Login = () => {
   const URL = "http://localhost:5000/api/docentes/login";
   const [email, setEmail] = useState("");
@@ -9,16 +9,26 @@ const Login = () => {
 
   const usuLogin = async (e) => {
     e.preventDefault();
-
-    try {
-      const response = await axios.post(URL, {
+    await axios
+      .post(URL, {
         email: email,
         password: pass,
+      })
+      .then((resp) => {
+        console.log("Login correcto");
+
+        localStorage.setItem(
+          "DatosUsuario",
+          JSON.stringify({
+            userId: resp.data.userId,
+            token: resp.data.token,
+          })
+        );
+      })
+      .catch((error) => {
+        console.log(error.message);
       });
-      console.log(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
+
     if (email.trim() === "" || pass.trim() === "") {
       return;
     }
