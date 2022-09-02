@@ -10,7 +10,7 @@
 .error404 {
   width: 70%;
   height: 70%;
-  background-image: url(../archivos/ERROR404NOTFOUND.png);
+  background-image: url(../../archivos/ERROR404NOTFOUND.png);
   background-position: center;
   background-size: contain;
   background-repeat: no-repeat;

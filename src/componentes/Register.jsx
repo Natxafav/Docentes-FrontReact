@@ -1,6 +1,6 @@
 import React from "react";
 //npm i react-hook-form
-import "./loginRegister.css";
+import "./css/loginRegister.css";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 

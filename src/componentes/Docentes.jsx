@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import ListarDocentes from "./ListarDocentes";
-import { extraerDatosDeUsuario } from "./DatosUsuario";
+import { extraerDatosDeUsuario } from "./Funcionalidad";
 
 const Docentes = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;

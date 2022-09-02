@@ -1,5 +1,5 @@
 import React from "react";
-import "./varios.css";
+import "./css/varios.css";
 
 const ListarDocentes = ({ docente }) => {
   const cursos = docente.cursos.map((dato) => {

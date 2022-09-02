@@ -13,6 +13,7 @@ import Docentes from "./componentes/Docentes";
 import Cursos from "./componentes/Cursos";
 import Error from "./componentes/Error";
 import Logout from "./componentes/Logout";
+import Inicio from "./componentes/Inicio";
 
 const App = () => {
   return (
@@ -36,6 +37,7 @@ const App = () => {
               </NavLink>
             </div>
             {/* Pendiente if para que no se tenga acceso a los botones si no estas registrado */}
+
             <div className="navButton">
               <NavLink className={"navlink"} to="/docentes">
                 DOCENTES
@@ -56,12 +58,13 @@ const App = () => {
         {/* A donde se dirige, el componente */}
 
         <Routes>
-          <Route path="/" element={<Login />} />
+          <Route path="/" element={<Inicio />} />
           <Route path="/login" element={<Login />} />
           <Route path="/registro" element={<Register />} />
           <Route path="/404" element={<Error />} />
           {/* En caso de que se ponga algo distinto */}
           <Route path="*" element={<Navigate to="/404" replace />} />
+          {/* <Route path="/docentes/personal" element={<Personal />} /> */}
           <Route path="/docentes" element={<Docentes />} />
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/logout" element={<Logout />} />

@@ -6,3 +6,5 @@ export const extraerDatosDeUsuario = () => {
     return [datosRecuperar.useId, datosRecuperar.token];
   }
 };
+
+export const mostrarUsuario = () => {};

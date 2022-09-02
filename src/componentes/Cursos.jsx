@@ -1,7 +1,7 @@
 import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
-import { extraerDatosDeUsuario } from "./DatosUsuario";
+import { extraerDatosDeUsuario } from "./Funcionalidad";
 import ListarCursos from "./ListarCursos";
 
 const Cursos = () => {

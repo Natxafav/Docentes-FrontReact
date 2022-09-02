@@ -66,3 +66,17 @@
   background-color: #282c34;
   color: white;
 }
+
+.welcome {
+  width: 100vw;
+  height: 90vh;
+  background-image: url(../../archivos/welcome-sign-ga2b99aa62_1280.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.mensaje {
+  position: absolute;
+  right: 30px;
+  bottom: 10px;
+}
