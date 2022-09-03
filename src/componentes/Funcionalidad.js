@@ -3,8 +3,6 @@ export const extraerDatosDeUsuario = () => {
   if (datosRecuperar && datosRecuperar.token) {
     // Si existe algo que recuperar y dentro de lo recuperado existe la propiedad token
 
-    return [datosRecuperar.useId, datosRecuperar.token];
+    return [datosRecuperar.useId, datosRecuperar.token, datosRecuperar.email];
   }
 };
-
-export const mostrarUsuario = () => {};

@@ -3,14 +3,17 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./css/loginRegister.css";
 import { useNavigate } from "react-router-dom";
+import Personal from "./Personal";
 
 const Login = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/login`;
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+  const navegar = useNavigate();
 
   const usuLogin = async (e) => {
     e.preventDefault();
+
     await axios
       .post(URL, {
         email: email,
@@ -23,6 +26,7 @@ const Login = () => {
           JSON.stringify({
             userId: resp.data.userId,
             token: resp.data.token,
+            email: resp.data.email,
           })
         );
       })
@@ -33,6 +37,7 @@ const Login = () => {
     if (email.trim() === "" || pass.trim() === "") {
       return;
     }
+    navegar("/personal");
     setEmail("");
     setPass("");
   };

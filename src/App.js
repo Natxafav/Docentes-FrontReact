@@ -14,6 +14,7 @@ import Cursos from "./componentes/Cursos";
 import Error from "./componentes/Error";
 import Logout from "./componentes/Logout";
 import Inicio from "./componentes/Inicio";
+import Personal from "./componentes/Personal";
 
 const App = () => {
   return (
@@ -53,6 +54,11 @@ const App = () => {
                 LOGOUT
               </NavLink>
             </div>
+            <div className="navButton">
+              <NavLink className={"navlink"} to="/personal">
+                Personal
+              </NavLink>
+            </div>
           </div>
         </div>
         {/* A donde se dirige, el componente */}
@@ -68,6 +74,7 @@ const App = () => {
           <Route path="/docentes" element={<Docentes />} />
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/logout" element={<Logout />} />
+          <Route path="/personal" element={<Personal />} />
         </Routes>
       </Router>
     </div>

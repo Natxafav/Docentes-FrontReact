@@ -66,11 +66,11 @@
   background-color: #282c34;
   color: white;
 }
-
+/* Inicio */
 .welcome {
-  width: 100vw;
+  width: 90vw;
   height: 90vh;
-  background-image: url(../../archivos/welcome-sign-ga2b99aa62_1280.jpg);
+  background-image: url(../../archivos/welcome\ 1.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;

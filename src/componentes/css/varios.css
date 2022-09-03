@@ -15,6 +15,7 @@
   background-size: contain;
   background-repeat: no-repeat;
 }
+/* Listar docentes */
 .mapdocente {
   width: 100vw;
   height: 100vh;
@@ -43,4 +44,65 @@
 .datoDocente {
   width: 20vw;
   text-align: left;
+}
+/* Personal: mostrar */
+
+.docente {
+  width: 80vw;
+  height: 70vh;
+  color: #282c34;
+  background-color: white;
+  border: groove #b9b5b5 8px;
+  box-shadow: 1px 1px 3px 10px #7e7c7c inset;
+  display: flex;
+  justify-content: space-around;
+  align-items: flex-start;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding: 15px;
+  font-size: 1.4rem;
+  margin-bottom: 15vh;
+  flex-wrap: wrap;
+}
+.docenteData {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5px;
+  margin: 2rem;
+  display: flex;
+
+  flex-direction: row;
+  font-size: 2vw;
+  font-weight: 600;
+}
+.docenteEtiqueta {
+  text-decoration: underline 3px;
+  width: 23vw;
+  text-align: left;
+  text-overflow: ellipsis;
+  box-shadow: 1px 1px 3px 10px #7e7c7c inset;
+  height: 13vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.docenteDato {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40vw;
+  height: 13vh;
+  text-align: left;
+  box-shadow: 1px 1px 3px 1px #7e7c7c inset;
+}
+.docenteDatoCurso {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* justify-content: center; */
+  width: 40vw;
+  height: 13vh;
+  text-align: left;
+  box-shadow: 1px 1px 3px 1px #7e7c7c inset;
 }
