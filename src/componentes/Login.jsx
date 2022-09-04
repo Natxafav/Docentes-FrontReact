@@ -3,12 +3,12 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./css/loginRegister.css";
 import { useNavigate } from "react-router-dom";
-import Personal from "./Personal";
 
-const Login = () => {
+const Login = ({ gestionarLogin }) => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/login`;
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
+
   const navegar = useNavigate();
 
   const usuLogin = async (e) => {
@@ -21,6 +21,7 @@ const Login = () => {
       })
       .then((resp) => {
         console.log("Login correcto");
+        gestionarLogin();
         localStorage.setItem(
           "DatosUsuario",
           JSON.stringify({
@@ -37,6 +38,7 @@ const Login = () => {
     if (email.trim() === "" || pass.trim() === "") {
       return;
     }
+
     navegar("/personal");
     setEmail("");
     setPass("");

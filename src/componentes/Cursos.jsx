@@ -25,7 +25,7 @@ const Cursos = () => {
   useEffect(() => {
     getCursos();
   }, []);
-
+  console.log(todosCursos);
   return (
     <div className="mapcursos">
       {todosCursos.map((curso) => {

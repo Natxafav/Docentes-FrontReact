@@ -68,11 +68,11 @@
 }
 /* Inicio */
 .welcome {
-  width: 90vw;
+  width: 100vw;
   height: 90vh;
   background-image: url(../../archivos/welcome\ 1.jpg);
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 .mensaje {

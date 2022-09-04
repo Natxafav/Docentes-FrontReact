@@ -16,7 +16,8 @@
   background-repeat: no-repeat;
 }
 /* Listar docentes */
-.mapdocente {
+.mapdocente,
+.mapcursos {
   width: 100vw;
   height: 100vh;
   display: flex;
@@ -47,8 +48,8 @@
 }
 /* Personal: mostrar */
 
-.docente {
-  width: 80vw;
+/* .docente {
+  width: 50vw;
   height: 70vh;
   color: #282c34;
   background-color: white;
@@ -78,7 +79,7 @@
 }
 .docenteEtiqueta {
   text-decoration: underline 3px;
-  width: 23vw;
+  width: 13vw;
   text-align: left;
   text-overflow: ellipsis;
   box-shadow: 1px 1px 3px 10px #7e7c7c inset;
@@ -91,7 +92,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  width: 40vw;
+  width: 10vw;
   height: 13vh;
   text-align: left;
   box-shadow: 1px 1px 3px 1px #7e7c7c inset;
@@ -101,8 +102,9 @@
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
-  width: 40vw;
+/* width: 40vw;
   height: 13vh;
   text-align: left;
   box-shadow: 1px 1px 3px 1px #7e7c7c inset;
 }
+ */

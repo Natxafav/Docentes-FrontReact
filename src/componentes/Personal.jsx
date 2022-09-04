@@ -6,6 +6,7 @@ import PersonalMostrar from "./PersonalMostrar";
 
 const Personal = () => {
   const email = extraerDatosDeUsuario()[2];
+
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/personal/${email}`;
 
   const [usuario, setUsuario] = useState([]);

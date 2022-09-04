@@ -3,12 +3,14 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import ListarDocentes from "./ListarDocentes";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
+import { useNavigate } from "react-router-dom";
 
 const Docentes = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
 
   const [todosDocentes, setTodosDocentes] = useState([]);
 
+  const navegar = useNavigate();
   const getDocentes = async () => {
     await axios
       .get(URL, {
@@ -20,6 +22,7 @@ const Docentes = () => {
       .catch((error) => {
         console.log(error.message);
       });
+    
   };
 
   useEffect(() => {
