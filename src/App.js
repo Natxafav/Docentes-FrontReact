@@ -22,18 +22,9 @@ const App = () => {
   const [estado, setEstado] = useState("Desconectado");
   const gestionarLogin = () => {
     setLogin(true);
-    conexion();
   };
   const gestionarLogout = () => {
     setLogin(false);
-    conexion();
-  };
-  const conexion = () => {
-    if (login) {
-      setEstado("Conectado");
-    } else {
-      setEstado("Desconectado");
-    }
   };
 
   return (

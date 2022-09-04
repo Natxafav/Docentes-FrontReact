@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/varios.css";
 
-const ListarCursos = ({ curso }) => {
+const ListarCursos = ({ curso, docente }) => {
   return (
     <div className="individuo">
       <div className="indivData">
@@ -12,10 +12,11 @@ const ListarCursos = ({ curso }) => {
         <div className="etiquetas">Aula: </div>
         <div className="datocurso">{curso.aula}</div>
       </div>
-      {/* <div className="indivData">
+      <div className="indivData">
         <div className="etiquetas">Docente:</div>
-        <div className="datocurso">{curso.docente.nombre}</div>
-      </div> */}
+        <div className="datocurso">{docente}</div>
+      </div>
+
       <div className="indivData">
         <div className="etiquetas">Opcion:</div>
         <div className="datocurso">{curso.opcion} </div>

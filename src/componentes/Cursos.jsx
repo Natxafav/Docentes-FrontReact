@@ -25,11 +25,17 @@ const Cursos = () => {
   useEffect(() => {
     getCursos();
   }, []);
-  console.log(todosCursos);
+
   return (
     <div className="mapcursos">
       {todosCursos.map((curso) => {
-        return <ListarCursos key={curso.id} curso={curso} />;
+        const cadaCurso = Object.values(curso);
+        const docente = Object.values(cadaCurso[2]).map((desp) => {
+          return desp;
+        });
+        return (
+          <ListarCursos key={curso.id} curso={curso} docente={docente[1]} />
+        );
       })}
     </div>
   );
