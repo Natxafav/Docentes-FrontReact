@@ -3,10 +3,11 @@ import React from "react";
 import "./css/loginRegister.css";
 import axios from "axios";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Register = ({ gestionarLogin }) => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
-
+  const navegar = useNavigate();
   const {
     setValue,
     register,
@@ -15,35 +16,32 @@ const Register = () => {
   } = useForm();
 
   const usuRegister = async (data) => {
-    try {
-      const response = await axios
-        .post(URL, {
-          nombre: data.nombre,
-          email: data.email,
-          password: data.password,
-        })
-        .then((response) => {
-          console.log("login correcto");
-          console.log(response.data);
-          localStorage.setItem(
-            "DatosUsuario",
-            JSON.stringify({
-              userId: response.data.userId,
-              token: response.data.token,
-            })
-          );
-        })
-        .catch((error) => {
-          console.log(error);
-        });
-      setValue("nombre", null);
-      setValue("email", null);
-      setValue("password", null);
+    await axios
+      .post(URL, {
+        nombre: data.nombre,
+        email: data.email,
+        password: data.password,
+      })
+      .then((response) => {
+        console.log("login correcto");
 
-      return console.log(response.data);
-    } catch (error) {
-      console.log(error.message);
-    }
+        localStorage.setItem(
+          "DatosUsuario",
+          JSON.stringify({
+            userId: response.data.userId,
+            token: response.data.token,
+            email: response.data.email,
+          })
+        );
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+    gestionarLogin(true);
+    navegar("/personal");
+    setValue("nombre", null);
+    setValue("email", null);
+    setValue("password", null);
   };
 
   return (

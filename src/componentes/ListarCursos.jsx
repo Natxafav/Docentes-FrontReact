@@ -1,7 +1,7 @@
 import React from "react";
 import "./css/varios.css";
 
-const ListarCursos = ({ curso, docente }) => {
+const ListarCursos = ({ curso }) => {
   return (
     <div className="individuo">
       <div className="indivData">
@@ -14,7 +14,7 @@ const ListarCursos = ({ curso, docente }) => {
       </div>
       <div className="indivData">
         <div className="etiquetas">Docente:</div>
-        <div className="datocurso">{docente}</div>
+        <div className="datocurso">{curso.docente.nombre}</div>
       </div>
 
       <div className="indivData">

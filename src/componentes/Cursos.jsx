@@ -12,7 +12,7 @@ const Cursos = () => {
   const getCursos = async () => {
     await axios
       .get(URL, {
-        headers: { Authorization: "Bearer" + extraerDatosDeUsuario()[1] },
+        headers: { Authorization: "Bearer " + extraerDatosDeUsuario()[1] },
       })
       .then((datos) => {
         setTodosCursos(datos.data.cursos);
@@ -21,21 +21,19 @@ const Cursos = () => {
         console.log(error.message);
       });
   };
-
   useEffect(() => {
     getCursos();
   }, []);
+  console.log(todosCursos);
 
   return (
     <div className="mapcursos">
-      {todosCursos.map((curso) => {
-        const cadaCurso = Object.values(curso);
+      {/* const cadaCurso = Object.values(curso);
         const docente = Object.values(cadaCurso[2]).map((desp) => {
           return desp;
-        });
-        return (
-          <ListarCursos key={curso.id} curso={curso} docente={docente[1]} />
-        );
+        }); */}
+      {todosCursos.map((curso) => {
+        return <ListarCursos key={curso.id} curso={curso} />;
       })}
     </div>
   );

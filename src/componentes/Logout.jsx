@@ -7,7 +7,7 @@ const Logout = ({ gestionarLogout }) => {
 
   const cerrarSesion = () => {
     localStorage.removeItem("DatosUsuario");
-    // gestionarLogout();
+    gestionarLogout(false);
   };
   useEffect(() => {
     cerrarSesion();

@@ -19,57 +19,60 @@ import { useState } from "react";
 
 const App = () => {
   const [login, setLogin] = useState(false);
-  const [estado, setEstado] = useState("Desconectado");
-  const gestionarLogin = () => {
-    setLogin(true);
-  };
-  const gestionarLogout = () => {
-    setLogin(false);
-  };
 
+  const gestionarLogin = (dato) => {
+    setLogin(dato);
+  };
+  const gestionarLogout = (dato) => {
+    setLogin(dato);
+  };
+  console.log(login);
   return (
     <div className="App">
       <Router>
         <div className="navbar">
-          <div className="navposition">
-            <div className="navButton">
-              <NavLink className={"navlink"} to="/">
-                INICIO
-              </NavLink>
+          {login === false ? (
+            <div className="navbar">
+              <div className="navButton">
+                <NavLink className={"navlink"} to="/">
+                  INICIO
+                </NavLink>
+              </div>
+              <div className="navButton">
+                <NavLink className={"navlink"} to="/login">
+                  LOGIN
+                </NavLink>
+              </div>
+              <div className="navButton">
+                <NavLink className={"navlink"} to="/registro">
+                  REGISTRO
+                </NavLink>
+              </div>
             </div>
-            <div className="navButton">
-              <NavLink className={"navlink"} to="/login">
-                LOGIN
-              </NavLink>
+          ) : (
+            <div className="navbar">
+              <div className="navButton">
+                <NavLink className={"navlink"} to="/docentes">
+                  DOCENTES
+                </NavLink>
+              </div>
+              <div className="navButton">
+                <NavLink className={"navlink"} to="/cursos">
+                  CURSOS
+                </NavLink>
+              </div>
+              <div className="navButton">
+                <NavLink className={"navlink"} to="/personal">
+                  PERSONAL
+                </NavLink>
+              </div>
+              <div className="navButton">
+                <NavLink className={"navlink"} to="/logout">
+                  LOGOUT
+                </NavLink>
+              </div>
             </div>
-            <div className="navButton">
-              <NavLink className={"navlink"} to="/registro">
-                REGISTRO
-              </NavLink>
-            </div>
-            {/* Pendiente if para que no se tenga acceso a los botones si no estas registrado */}
-
-            <div className="navButton">
-              <NavLink className={"navlink"} to="/docentes">
-                DOCENTES
-              </NavLink>
-            </div>
-            <div className="navButton">
-              <NavLink className={"navlink"} to="/cursos">
-                CURSOS
-              </NavLink>
-            </div>
-            <div className="navButton">
-              <NavLink className={"navlink"} to="/logout">
-                LOGOUT
-              </NavLink>
-            </div>
-            <div className="navButton">
-              <NavLink className={"navlink"} to="/personal">
-                PERSONAL
-              </NavLink>
-            </div>
-          </div>
+          )}
         </div>
         {/* A donde se dirige, el componente */}
 
@@ -81,7 +84,7 @@ const App = () => {
           />
           <Route
             path="/registro"
-            element={<Register gestionarLogout={gestionarLogout} />}
+            element={<Register gestionarLogin={gestionarLogin} />}
           />
           <Route path="/404" element={<Error />} />
           {/* En caso de que se ponga algo distinto */}
@@ -91,7 +94,7 @@ const App = () => {
           <Route path="/cursos" element={<Cursos />} />
           <Route
             path="/logout"
-            element={<Logout gestionarLog={gestionarLogout} />}
+            element={<Logout gestionarLogout={gestionarLogout} />}
           />
           <Route path="/personal" element={<Personal />} />
         </Routes>

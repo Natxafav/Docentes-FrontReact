@@ -14,7 +14,7 @@ const Docentes = () => {
   const getDocentes = async () => {
     await axios
       .get(URL, {
-        headers: { Authorization: "Bearer" + extraerDatosDeUsuario()[1] },
+        headers: { Authorization: "Bearer " + extraerDatosDeUsuario()[1] },
       })
       .then((datos) => {
         setTodosDocentes(datos.data.docentes);
@@ -22,7 +22,6 @@ const Docentes = () => {
       .catch((error) => {
         console.log(error.message);
       });
-    
   };
 
   useEffect(() => {

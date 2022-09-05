@@ -38,6 +38,7 @@ const Login = ({ gestionarLogin }) => {
     if (email.trim() === "" || pass.trim() === "") {
       return;
     }
+    gestionarLogin(true);
 
     navegar("/personal");
     setEmail("");

@@ -4,6 +4,7 @@ const PersonalMostrar = ({ dato }) => {
   const docente = dato.cursos.map((dato) => {
     return <div>{dato.curso}</div>;
   });
+  console.log(docente);
 
   return (
     <div className="docente">
