@@ -26,7 +26,7 @@ const App = () => {
   const gestionarLogout = (dato) => {
     setLogin(dato);
   };
-  console.log(login);
+  console.log("Login :" + login);
   return (
     <div className="App">
       <Router>

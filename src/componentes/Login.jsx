@@ -1,5 +1,5 @@
 import React from "react";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import axios from "axios";
 import "./css/loginRegister.css";
 import { useNavigate } from "react-router-dom";
@@ -20,16 +20,23 @@ const Login = ({ gestionarLogin }) => {
         password: pass,
       })
       .then((resp) => {
-        console.log("Login correcto");
-        gestionarLogin();
-        localStorage.setItem(
-          "DatosUsuario",
-          JSON.stringify({
-            userId: resp.data.userId,
-            token: resp.data.token,
-            email: resp.data.email,
-          })
-        );
+        console.log("docenteok  " + resp.data.docenteok);
+        if (resp.data.docenteok === false) {
+          console.log("docent en ifeok  " + resp.data.docenteok);
+          navegar("/");
+        } else {
+          localStorage.setItem(
+            "DatosUsuario",
+            JSON.stringify({
+              userId: resp.data.userId,
+              token: resp.data.token,
+              email: resp.data.email,
+            })
+          );
+          gestionarLogin(true);
+
+          navegar("/personal");
+        }
       })
       .catch((error) => {
         console.log(error.message);
@@ -38,9 +45,7 @@ const Login = ({ gestionarLogin }) => {
     if (email.trim() === "" || pass.trim() === "") {
       return;
     }
-    gestionarLogin(true);
 
-    navegar("/personal");
     setEmail("");
     setPass("");
   };
@@ -51,7 +56,6 @@ const Login = ({ gestionarLogin }) => {
   const gestorPass = (e) => {
     setPass(e.target.value);
   };
-  useEffect(() => {}, []);
 
   return (
     <div className="login">
@@ -68,6 +72,8 @@ const Login = ({ gestionarLogin }) => {
               value={email}
               onChange={gestorEmail}
               placeholder="EMAIL"
+              minlength="5"
+              required
             ></input>
             <input
               className="form-input-login"
@@ -76,6 +82,8 @@ const Login = ({ gestionarLogin }) => {
               value={pass}
               onChange={gestorPass}
               placeholder="PASSWORD"
+              minlength="5"
+              required
             ></input>
           </div>
           <div className="button-container-login">
