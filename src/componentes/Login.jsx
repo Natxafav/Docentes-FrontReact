@@ -69,7 +69,7 @@ const Login = ({ gestionarLogin }) => {
           value={email}
           onChange={gestorEmail}
           placeholder="EMAIL"
-          minlength="5"
+          minLength="5"
           required
         ></input>
         <input
@@ -79,7 +79,7 @@ const Login = ({ gestionarLogin }) => {
           value={pass}
           onChange={gestorPass}
           placeholder="PASSWORD"
-          minlength="5"
+          minLength="5"
           required
         ></input>
 

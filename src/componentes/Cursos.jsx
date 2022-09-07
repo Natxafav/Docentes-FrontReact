@@ -17,20 +17,21 @@ const Cursos = () => {
     navegar("/cursos/nuevo");
   };
 
-  const getCursos = async () => {
-    await axios
-      .get(URL, {
-        headers: { Authorization: "Bearer " + extraerDatosDeUsuario()[1] },
-      })
-      .then((datos) => {
-        setTodosCursos(datos.data.cursos);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
   useEffect(() => {
+    const getCursos = async () => {
+      await axios
+        .get(URL, {
+          headers: { Authorization: "Bearer " + extraerDatosDeUsuario()[1] },
+        })
+        .then((datos) => {
+          setTodosCursos(datos.data.cursos);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    };
     getCursos();
+    console.log(todosCursos);
   }, []);
 
   return (
@@ -42,7 +43,7 @@ const Cursos = () => {
       </div>
 
       {todosCursos.map((curso) => {
-        return <ListarCursos key={curso.id} curso={curso} />;
+        return <ListarCursos key={curso._id} curso={curso} />;
       })}
     </div>
   );

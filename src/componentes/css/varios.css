@@ -32,6 +32,7 @@
   flex-wrap: wrap;
   align-items: flex-start;
   padding: 15px;
+  min-width: 10em;
 }
 .check {
   height: fit-content;
@@ -45,12 +46,17 @@
 }
 .datocurso,
 .datoDocente {
-  align-self: center;
+  align-self: flex-start;
+  text-align: center;
   font-size: x-large;
+  display: flex;
+  flex-wrap: wrap;
+  width: 21vw;
+  margin: 5px;
 }
-#cursocheckb {
+/* #cursocheckb {
   display: none;
-}
+} */
 .nuevoCursoContainer {
   display: block;
   width: 100vw;
@@ -138,6 +144,12 @@
   visibility: visible;
   cursor: pointer;
 }
+.button.modificar {
+}
+.modificarCurso {
+}
+
+/* DISEÑO RESPONSIVE */
 
 @media (max-width: 768px) {
   .mapcursos,

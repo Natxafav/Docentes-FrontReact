@@ -12,27 +12,26 @@ const Personal = () => {
 
   const [usuario, setUsuario] = useState([]);
 
-  const personalDocente = async () => {
-    await axios
-      .get(URL, {
-        headers: { Authorization: "Bearer" + extraerDatosDeUsuario()[1] },
-      })
-      .then((datos) => {
-        setUsuario(datos.data.docentes);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
-
   useEffect(() => {
+    const personalDocente = async () => {
+      await axios
+        .get(URL, {
+          headers: { Authorization: "Bearer" + extraerDatosDeUsuario()[1] },
+        })
+        .then((datos) => {
+          setUsuario(datos.data.docentes);
+        })
+        .catch((error) => {
+          console.log(error.message);
+        });
+    };
     personalDocente();
-  }, []);
+  }, [usuario]);
 
   return (
     <div className="personal">
       {usuario.map((dato) => {
-        return <PersonalMostrar key={dato.id} dato={dato} />;
+        return <PersonalMostrar key={dato._id} dato={dato} />;
       })}
     </div>
   );

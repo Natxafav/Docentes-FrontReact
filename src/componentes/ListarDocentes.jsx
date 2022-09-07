@@ -3,7 +3,7 @@ import "./css/varios.css";
 
 const ListarDocentes = ({ docente }) => {
   const cursos = docente.cursos.map((dato) => {
-    return <div>{dato.curso}</div>;
+    return <div key={dato._id}>{dato.curso}</div>;
   });
 
   return (
