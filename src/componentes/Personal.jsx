@@ -3,6 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
 import PersonalMostrar from "./PersonalMostrar";
+import "./css/varios.css";
 
 const Personal = () => {
   const email = extraerDatosDeUsuario()[2];

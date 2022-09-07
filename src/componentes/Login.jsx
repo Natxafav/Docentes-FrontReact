@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import axios from "axios";
-import "./css/loginRegister.css";
+import "./css/formularios.css";
 import { useNavigate } from "react-router-dom";
 
 const Login = ({ gestionarLogin }) => {
@@ -58,39 +58,35 @@ const Login = ({ gestionarLogin }) => {
   };
 
   return (
-    <div className="login">
-      <form action="#">
-        <div className="form-container-login">
-          <div className="label-container-login">
-            <label>ENTRAR</label>
-          </div>
-          <div className="input-container-login">
-            <input
-              className="form-input-login"
-              type="email"
-              name="email"
-              value={email}
-              onChange={gestorEmail}
-              placeholder="EMAIL"
-              minlength="5"
-              required
-            ></input>
-            <input
-              className="form-input-login"
-              type="password"
-              name="name"
-              value={pass}
-              onChange={gestorPass}
-              placeholder="PASSWORD"
-              minlength="5"
-              required
-            ></input>
-          </div>
-          <div className="button-container-login">
-            <button className="enviar" onClick={usuLogin}>
-              LOGIN
-            </button>
-          </div>
+    <div className="login-page">
+      <form className="form-container login" action="#">
+        <label className="label-container login"></label>
+
+        <input
+          className="form-input login"
+          type="email"
+          name="email"
+          value={email}
+          onChange={gestorEmail}
+          placeholder="EMAIL"
+          minlength="5"
+          required
+        ></input>
+        <input
+          className="form-input login"
+          type="password"
+          name="name"
+          value={pass}
+          onChange={gestorPass}
+          placeholder="PASSWORD"
+          minlength="5"
+          required
+        ></input>
+
+        <div className="button-container login">
+          <button className="enviar" onClick={usuLogin}>
+            LOGIN
+          </button>
         </div>
       </form>
     </div>

@@ -3,11 +3,19 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
 import ListarCursos from "./ListarCursos";
+import { useNavigate } from "react-router-dom";
+import "./css/varios.css";
+import Buscar from "./Buscar";
 
 const Cursos = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
 
   const [todosCursos, setTodosCursos] = useState([]);
+
+  const navegar = useNavigate();
+  const goTo = () => {
+    navegar("/cursos/nuevo");
+  };
 
   const getCursos = async () => {
     await axios
@@ -24,14 +32,15 @@ const Cursos = () => {
   useEffect(() => {
     getCursos();
   }, []);
-  console.log(todosCursos);
 
   return (
     <div className="mapcursos">
-      {/* const cadaCurso = Object.values(curso);
-        const docente = Object.values(cadaCurso[2]).map((desp) => {
-          return desp;
-        }); */}
+      <div className="nuevoCursoContainer">
+        <button className="crearCurso" onClick={goTo}>
+          CREAR
+        </button>
+      </div>
+
       {todosCursos.map((curso) => {
         return <ListarCursos key={curso.id} curso={curso} />;
       })}

@@ -16,6 +16,7 @@ import Logout from "./componentes/Logout";
 import Inicio from "./componentes/Inicio";
 import Personal from "./componentes/Personal";
 import { useState } from "react";
+import NuevoCurso from "./componentes/NuevoCurso";
 
 const App = () => {
   const [login, setLogin] = useState(false);
@@ -30,50 +31,48 @@ const App = () => {
   return (
     <div className="App">
       <Router>
-        <div className="navbar">
-          {login === false ? (
-            <div className="navbar">
-              <div className="navButton">
+        <div className="menu-navbar">
+          <div className="navbar">
+            <input type={"checkbox"} id="checkb"></input>
+            <label className="navLabel" htmlFor="checkb">
+              <span className="menu-line">&#9776;</span>
+            </label>
+            {login === false ? (
+              <ul className="list">
                 <NavLink className={"navlink"} to="/">
                   INICIO
                 </NavLink>
-              </div>
-              <div className="navButton">
+
                 <NavLink className={"navlink"} to="/login">
                   LOGIN
                 </NavLink>
-              </div>
-              <div className="navButton">
+
                 <NavLink className={"navlink"} to="/registro">
                   REGISTRO
                 </NavLink>
-              </div>
-            </div>
-          ) : (
-            <div className="navbar">
-              <div className="navButton">
+              </ul>
+            ) : (
+              <ul className="list">
                 <NavLink className={"navlink"} to="/docentes">
                   DOCENTES
                 </NavLink>
-              </div>
-              <div className="navButton">
+
                 <NavLink className={"navlink"} to="/cursos">
                   CURSOS
                 </NavLink>
-              </div>
-              <div className="navButton">
+
                 <NavLink className={"navlink"} to="/personal">
                   PERSONAL
                 </NavLink>
-              </div>
-              <div className="navButton">
+
                 <NavLink className={"navlink"} to="/logout">
                   LOGOUT
                 </NavLink>
-              </div>
-            </div>
-          )}
+              </ul>
+            )}
+          </div>
         </div>
+
         {/* A donde se dirige, el componente */}
 
         <Routes>
@@ -97,6 +96,7 @@ const App = () => {
             element={<Logout gestionarLogout={gestionarLogout} />}
           />
           <Route path="/personal" element={<Personal />} />
+          <Route path="/cursos/nuevo" element={<NuevoCurso />} />
         </Routes>
       </Router>
     </div>

@@ -1,5 +1,5 @@
 import React from "react";
-import "./css/loginRegister.css";
+import "./css/formularios.css";
 const Inicio = () => {
   return (
     <div className="welcome">

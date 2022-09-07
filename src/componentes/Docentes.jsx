@@ -30,6 +30,24 @@ const Docentes = () => {
 
   return (
     <div className=" mapdocente">
+      <div className="div-form-selector">
+        <form action="#" className="form-selector">
+          <select name="accion" className="selector">
+            <option className="accion" value={""}>
+              Seleccionar acción.{" "}
+            </option>
+            <option className="buscar" value={"buscar"}>
+              Buscar
+            </option>
+            <option className="modificar" value={"modificar"}>
+              Modificar
+            </option>
+            <option className="eliminar" value={"eliminar"}>
+              Eliminar
+            </option>
+          </select>
+        </form>
+      </div>
       {todosDocentes.map((docente) => {
         return <ListarDocentes key={docente._id} docente={docente} />;
       })}

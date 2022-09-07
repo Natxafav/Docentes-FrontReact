@@ -4,22 +4,17 @@ const PersonalMostrar = ({ dato }) => {
   const docente = dato.cursos.map((dato) => {
     return <div>{dato.curso}</div>;
   });
-  console.log(docente);
 
   return (
     <div className="docente">
-      <div className="docenteData">
-        <div className="docenteEtiqueta">Nombre: </div>
-        <div className="docenteDato">{dato.nombre}</div>
-      </div>
-      <div className="docenteData">
-        <div className="docenteEtiqueta">Email:</div>
-        <div className="docenteDato">{dato.email}</div>
-      </div>
-      <div className="docenteData">
-        <div className="docenteEtiqueta">Cursos:</div>
-        <div className="docenteDatoCurso">{docente} </div>
-      </div>
+      <div className="etiquetas">Nombre: </div>
+      <div className="datoDocente personal">{dato.nombre}</div>
+
+      <div className="etiquetas">Email:</div>
+      <div className="datoDocente personal">{dato.email}</div>
+
+      <div className="etiquetas">Cursos:</div>
+      <div className="datoDocente personal">{docente} </div>
     </div>
   );
 };

@@ -8,15 +8,13 @@ const ListarDocentes = ({ docente }) => {
 
   return (
     <div className="individuo">
-      <div className="indivData">
+      <div className="check">
         <div className="etiquetas">Nombre: </div>
         <div className="datoDocente">{docente.nombre}</div>
-      </div>
-      <div className="indivData">
+
         <div className="etiquetas">Email:</div>
         <div className="datoDocente">{docente.email}</div>
-      </div>
-      <div className="indivData">
+
         <div className="etiquetas">Cursos:</div>
         <div className="datoDocente">{cursos} </div>
       </div>

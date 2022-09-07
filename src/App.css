@@ -3,58 +3,95 @@
 }
 
 .App {
-  background-color: #282c34;
-  height: 100vh;
+  height: fit-content;
+  list-style: none;
+  text-decoration: none;
   min-width: calc(30vw + 3em);
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   font-size: calc(15px + 2vmin);
   color: white;
+  background-image: url(../src/archivos/azul-abstracto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.menu-navbar {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 3;
+  background-image: url(../src/archivos/azul-abstracto.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .navbar {
-  border: 2px groove #b9b5b5;
-  width: 100vw;
-  height: fit-content;
-  background-color: #282c34;
   display: flex;
+  width: 100%;
+  height: auto;
   flex-wrap: wrap;
-  justify-content: flex-end;
-  max-width: max-content;
-  max-height: fit-content;
-}
-.navposition {
-  display: flex;
-  width: fit-content;
-  height: fit-content;
-  flex-direction: row;
-  justify-content: space-around;
   align-items: center;
-  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 15px;
 }
-.navButton {
-  background-color: #282c34;
-  max-width: max-content;
-  max-height: fit-content;
-  box-shadow: 6px 6px 3px 1px #7e7c7c;
+.navbar a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.list {
+  width: 70vw;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 .navlink {
-  margin: 2vw;
-  padding: 2px;
-  background-color: white;
-  text-decoration: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  font-size: 1.3rem;
-  font-family: "Courier New", Courier, monospace;
-  font-weight: 800;
-  text-align: center;
-  box-shadow: -2px -2px 0 1px #b9b5b5;
+  margin: 3px;
+  list-style: none;
 }
-.navlink:hover {
-  box-shadow: -3px -1px 0 1px #b9b5b5;
-  background-color: #282c34;
-  color: white;
+#checkb,
+.navLabel,
+.menu-line,
+#checkb {
+  display: none;
+}
+
+@media (max-width: 768px) {
+  .menu-navbar {
+    height: 10vh;
+  }
+  .navLabel {
+    display: block;
+  }
+  .menu-line {
+    display: block;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+  }
+  .list {
+    display: block;
+    position: fixed;
+    top: 70px;
+    left: -100%;
+    background: #222;
+    width: 60%;
+    height: 100vh;
+    right: 0;
+  }
+  .navlink {
+    padding: 2rem;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+  }
+  #checkb:checked ~ .list {
+    left: 0;
+    cursor: pointer;
+    transition: all 0.25s;
+  }
 }
