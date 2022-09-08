@@ -17,6 +17,7 @@ import Inicio from "./componentes/Inicio";
 import Personal from "./componentes/Personal";
 import { useState } from "react";
 import NuevoCurso from "./componentes/NuevoCurso";
+import CursosModif from "./componentes/CursosModif";
 
 const App = () => {
   const [login, setLogin] = useState(false);
@@ -97,6 +98,7 @@ const App = () => {
           />
           <Route path="/personal" element={<Personal />} />
           <Route path="/cursos/nuevo" element={<NuevoCurso />} />
+          <Route path="/cursos/modificar" element={<CursosModif />} />
         </Routes>
       </Router>
     </div>

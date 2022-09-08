@@ -11,6 +11,7 @@ const Cursos = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
 
   const [todosCursos, setTodosCursos] = useState([]);
+  const [userId, setUserId] = useState(null);
 
   const navegar = useNavigate();
   const goTo = () => {
@@ -31,7 +32,6 @@ const Cursos = () => {
         });
     };
     getCursos();
-    console.log(todosCursos);
   }, []);
 
   return (

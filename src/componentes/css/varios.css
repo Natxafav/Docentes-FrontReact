@@ -144,7 +144,14 @@
   visibility: visible;
   cursor: pointer;
 }
-.button.modificar {
+/* .checked-cursos {
+  visibility: hidden;
+} */
+.form-modif-curso {
+  visibility: hidden;
+}
+.checked-cursos:checked .form-modif-curso {
+  visibility: visible;
 }
 .modificarCurso {
 }
