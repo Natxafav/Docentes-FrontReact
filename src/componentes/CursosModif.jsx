@@ -43,6 +43,7 @@ const CursosModif = ({ cursoConcreto }) => {
       .catch((error) => {
         console.log(error.message);
       });
+    navegar("/cursos");
   };
 
   const eliminarCurso = async () => {

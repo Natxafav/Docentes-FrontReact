@@ -34,9 +34,9 @@ const ListarCursos = ({ curso }) => {
 
   console.log("dato " + date + " fuera de ontenerIdCurso  " + userId);
 
-  const goTo = () => {
-    navegar("/cursos/modificar");
-  };
+  // const goTo = () => {
+  //   navegar("/cursos/modificar");
+  // };
 
   const getCursos = async () => {
     await axios
@@ -45,13 +45,14 @@ const ListarCursos = ({ curso }) => {
       })
       .then((datos) => {
         setCursoConcreto(datos.data.curso);
+        console.log(datos.data.curso + "   dentro get cursos");
       })
       .catch((error) => {
         console.log(error.message);
       });
   };
 
-  console.log(cursoConcreto);
+  console.log(cursoConcreto + "antes del return ");
   return (
     <div className="listaCursos">
       {isChecked ? <CursosModif cursoConcreto={cursoConcreto} /> : null}
