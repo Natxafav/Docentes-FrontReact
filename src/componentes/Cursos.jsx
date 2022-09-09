@@ -36,12 +36,13 @@ const Cursos = () => {
 
   return (
     <div className="mapcursos">
+      {" "}
       <div className="nuevoCursoContainer">
         <button className="crearCurso" onClick={goTo}>
           CREAR
         </button>
+        <Buscar />{" "}
       </div>
-
       {todosCursos.map((curso) => {
         return <ListarCursos key={curso._id} curso={curso} />;
       })}
