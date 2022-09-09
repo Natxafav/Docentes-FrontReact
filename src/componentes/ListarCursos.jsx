@@ -1,5 +1,5 @@
 import React from "react";
-import { FaEdit, FaObjectGroup, FaTrash } from "react-icons/fa";
+import { FaEdit, FaTrash } from "react-icons/fa";
 import "./css/varios.css";
 import { useState, useEffect } from "react";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
@@ -29,6 +29,7 @@ const ListarCursos = ({ curso }) => {
     setUserId(e.target.value);
   };
   console.log(isChecked);
+  console.log(curso._id + "del seleccionado");
   const date = new Date();
 
   console.log("dato " + date + " fuera de ontenerIdCurso  " + userId);
@@ -75,12 +76,11 @@ const ListarCursos = ({ curso }) => {
             type="checkbox"
             className="checked-cursos"
             value={curso._id}
-            checked={isChecked}
-            onChange={idCurso}
+            defaultChecked={idCurso}
             onClick={checkedChange}
           ></input>
-          <button className="cursoModif modif" onClick={getCursos}>
-            BUSCAR
+          <button className="botonModif curso" onClick={getCursos}>
+            Buscar Datos
           </button>
         </div>
       </div>

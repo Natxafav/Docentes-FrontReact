@@ -11,7 +11,7 @@ const Cursos = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
 
   const [todosCursos, setTodosCursos] = useState([]);
-  const [userId, setUserId] = useState(null);
+  // const [userId, setUserId] = useState(null);
 
   const navegar = useNavigate();
   const goTo = () => {
@@ -36,13 +36,13 @@ const Cursos = () => {
 
   return (
     <div className="mapcursos">
-      <Buscar />
+      {" "}
       <div className="nuevoCursoContainer">
         <button className="crearCurso" onClick={goTo}>
           CREAR
         </button>
+        <Buscar />{" "}
       </div>
-
       {todosCursos.map((curso) => {
         return <ListarCursos key={curso._id} curso={curso} />;
       })}

@@ -8,7 +8,6 @@ import { useNavigate } from "react-router-dom";
 
 const CursosModif = ({ cursoConcreto }) => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
-  const { _id, curso, docente, opcion, aula, precio } = cursoConcreto;
   console.log(cursoConcreto);
   const [cursos, setCursos] = useState(cursoConcreto.curso);
   const [aulas, setAulas] = useState(cursoConcreto.aula);
@@ -16,7 +15,12 @@ const CursosModif = ({ cursoConcreto }) => {
   const [precios, setPrecios] = useState(cursoConcreto.precio);
   const id = cursoConcreto._id;
   const navegar = useNavigate();
-  console.log(id);
+
+  console.log(cursoConcreto);
+  console.log(id + "    id");
+  console.log(cursoConcreto.curso);
+  console.log(cursoConcreto.precio);
+
   const modificarCurso = async (e) => {
     await axios
       .patch(
@@ -24,7 +28,7 @@ const CursosModif = ({ cursoConcreto }) => {
         {
           curso: cursos,
           aula: aulas,
-
+          docente: extraerDatosDeUsuario()[0],
           opcion: opciones,
           precio: precios,
         },
@@ -51,6 +55,7 @@ const CursosModif = ({ cursoConcreto }) => {
       .catch((error) => {
         console.log(error.response.data);
       });
+    navegar("/cursos");
   };
   const gestorCurso = (e) => {
     setCursos(e.target.value);
@@ -67,7 +72,7 @@ const CursosModif = ({ cursoConcreto }) => {
   return (
     <div>
       <div className="form-modif-curso">
-        <form action="#" className="form-modif curso">
+        <form action="#">
           <input
             type="text"
             value={cursos}
@@ -75,7 +80,7 @@ const CursosModif = ({ cursoConcreto }) => {
             onChange={gestorCurso}
           />
           <select onChange={gestorAula} name="aula" id="aula" value={aulas}>
-            <option value="">{cursoConcreto.aula}</option>
+            <option value={cursoConcreto.aula}>{cursoConcreto.aula}</option>
             <option value="Aula-1">Aula-1</option>
             <option value="Aula-2">Aula-2</option>
             <option value="Aula-3">Aula-3</option>
@@ -83,7 +88,7 @@ const CursosModif = ({ cursoConcreto }) => {
           </select>
 
           <select name="opcion" id="opcion" onChange={gestorOpcion}>
-            <option value="">{cursoConcreto.opcion}</option>
+            <option value={cursoConcreto.opcion}>{cursoConcreto.opcion}</option>
             <option value="Virtual">Virtual</option>
             <option value="Semi-presencial">Semi-presencial</option>
             <option value="Presencial">Presencial</option>
@@ -96,11 +101,11 @@ const CursosModif = ({ cursoConcreto }) => {
             placeholder={cursoConcreto.precio}
           />
           <div>
-            <button className="cursoModif modif" onClick={modificarCurso}>
-              {<FaEdit className="faedit" />}
+            <button className="botonModif modif" onClick={modificarCurso}>
+              {<FaEdit className="imgBoton" />}
             </button>
-            <button className="cursoModif elim" onClick={eliminarCurso}>
-              {<FaTrash className="fatrash" />}
+            <button className="botonModif eliminar" onClick={eliminarCurso}>
+              {<FaTrash className="imgBoton" />}
             </button>
           </div>
         </form>

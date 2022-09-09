@@ -31,7 +31,8 @@ const Buscar = () => {
       <input
         type="text"
         name="busca"
-        placeholder="Buscar"
+        className="buscarCurso"
+        placeholder="Buscar por curso"
         onChange={gestorBusca}
         onKeyDown={gestorTecla}
       ></input>
