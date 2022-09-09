@@ -76,7 +76,7 @@ const ListarCursos = ({ curso }) => {
             type="checkbox"
             className="checked-cursos"
             value={curso._id}
-            defaultChecked={idCurso}
+            isChecked={idCurso}
             onClick={checkedChange}
           ></input>
           <button className="botonModif curso" onClick={getCursos}>

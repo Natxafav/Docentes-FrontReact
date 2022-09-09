@@ -79,16 +79,28 @@ const CursosModif = ({ cursoConcreto }) => {
             placeholder={cursoConcreto.curso}
             onChange={gestorCurso}
           />
-          <select onChange={gestorAula} name="aula" id="aula" value={aulas}>
-            <option value={cursoConcreto.aula}>{cursoConcreto.aula}</option>
+          <select
+            onChange={gestorAula}
+            name="aula"
+            id="aula"
+            placeholder={cursoConcreto.aula}
+            value={aulas}
+          >
+            <option value=""></option>
             <option value="Aula-1">Aula-1</option>
             <option value="Aula-2">Aula-2</option>
             <option value="Aula-3">Aula-3</option>
             <option value="Aula-4">Aula-4</option>
           </select>
 
-          <select name="opcion" id="opcion" onChange={gestorOpcion}>
-            <option value={cursoConcreto.opcion}>{cursoConcreto.opcion}</option>
+          <select
+            value={opciones}
+            name="opcion"
+            id="opcion"
+            onChange={gestorOpcion}
+            placeholder={cursoConcreto.opcion}
+          >
+            <option value=""></option>
             <option value="Virtual">Virtual</option>
             <option value="Semi-presencial">Semi-presencial</option>
             <option value="Presencial">Presencial</option>

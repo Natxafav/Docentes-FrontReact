@@ -20,15 +20,18 @@ import NuevoCurso from "./componentes/NuevoCurso";
 import CursosModif from "./componentes/CursosModif";
 
 const App = () => {
-  const [login, setLogin] = useState(false);
+  // const gestionarLogin = (dato) => {
+  //   setLogin(dato);
+  // };
+  // const gestionarLogout = (dato) => {
+  //   setLogin(dato);
+  // };
+  // console.log("Login :" + login);
 
-  const gestionarLogin = (dato) => {
-    setLogin(dato);
-  };
-  const gestionarLogout = (dato) => {
-    setLogin(dato);
-  };
-  console.log("Login :" + login);
+  const datosToken = JSON.parse(localStorage.getItem("DatosUsuario"));
+
+  const [login, setLogin] = useState(datosToken !== null);
+
   return (
     <div className="App">
       <Router>
@@ -38,7 +41,7 @@ const App = () => {
             <label className="navLabel" htmlFor="checkb">
               <span className="menu-line">&#9776;</span>
             </label>
-            {login === false ? (
+            {!login ? (
               <ul className="list">
                 <NavLink className={"navlink"} to="/">
                   INICIO
@@ -78,24 +81,16 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Inicio />} />
-          <Route
-            path="/login"
-            element={<Login gestionarLogin={gestionarLogin} />}
-          />
-          <Route
-            path="/registro"
-            element={<Register gestionarLogin={gestionarLogin} />}
-          />
+          <Route path="/login" element={<Login />} />
+
+          <Route path="/registro" element={<Register />} />
           <Route path="/404" element={<Error />} />
           {/* En caso de que se ponga algo distinto */}
           <Route path="*" element={<Navigate to="/404" replace />} />
           {/* <Route path="/docentes/personal" element={<Personal />} /> */}
           <Route path="/docentes" element={<Docentes />} />
           <Route path="/cursos" element={<Cursos />} />
-          <Route
-            path="/logout"
-            element={<Logout gestionarLogout={gestionarLogout} />}
-          />
+          <Route path="/logout" element={<Logout />} />
           <Route path="/personal" element={<Personal />} />
           <Route path="/cursos/nuevo" element={<NuevoCurso />} />
           <Route path="/cursos/modificar" element={<CursosModif />} />
