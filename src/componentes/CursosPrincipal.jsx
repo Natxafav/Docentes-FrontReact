@@ -2,12 +2,12 @@ import React from "react";
 import axios from "axios";
 import { useState, useEffect } from "react";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
-import ListarCursos from "./ListarCursos";
+import CursosListar from "./CursosListar";
 import { useNavigate } from "react-router-dom";
 import "./css/varios.css";
-import Buscar from "./Buscar";
+import CursosBuscar from "./CursosBuscar";
 
-const Cursos = () => {
+const CursosPrincipal = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
 
   const [todosCursos, setTodosCursos] = useState([]);
@@ -36,7 +36,6 @@ const Cursos = () => {
 
   return (
     <div className="mapcursos">
-      <Buscar />
       <div className="nuevoCursoContainer">
         <button className="crearCurso" onClick={goTo}>
           CREAR
@@ -44,10 +43,10 @@ const Cursos = () => {
       </div>
 
       {todosCursos.map((curso) => {
-        return <ListarCursos key={curso._id} curso={curso} />;
+        return <CursosListar key={curso._id} curso={curso} />;
       })}
     </div>
   );
 };
 
-export default Cursos;
+export default CursosPrincipal;

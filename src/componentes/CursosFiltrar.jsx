@@ -4,7 +4,7 @@ import axios from "axios";
 
 import { extraerDatosDeUsuario } from "./Funcionalidad";
 
-const FiltrarCursos = () => {
+const CursosFiltrar = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
 
   const filtrar = async (idCursos) => {
@@ -76,4 +76,4 @@ const FiltrarCursos = () => {
   return <div>FiltrarCursos</div>;
 };
 
-export default FiltrarCursos;
+export default CursosFiltrar;

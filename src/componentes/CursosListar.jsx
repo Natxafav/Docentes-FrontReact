@@ -8,7 +8,7 @@ import axios from "axios";
 
 import { useNavigate } from "react-router-dom";
 
-const ListarCursos = ({ curso }) => {
+const CursosListar = ({ curso }) => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
   const [userId, setUserId] = useState();
   const [isChecked, setIsChecked] = useState(false);
@@ -23,9 +23,6 @@ const ListarCursos = ({ curso }) => {
   const navegar = useNavigate();
   const checkedChange = (e) => {
     setIsChecked(!isChecked);
-    setUserId(e.target.value);
-  };
-  const idCurso = (e) => {
     setUserId(e.target.value);
   };
   console.log(isChecked);
@@ -54,7 +51,6 @@ const ListarCursos = ({ curso }) => {
   return (
     <div className="listaCursos">
       {isChecked ? <CursosModif cursoConcreto={cursoConcreto} /> : null}
-
       <div className="individuo">
         <div className="etiquetas">Curso: </div>
         <div className="datocurso">{curso.curso}</div>
@@ -76,16 +72,14 @@ const ListarCursos = ({ curso }) => {
             className="checked-cursos"
             value={curso._id}
             checked={isChecked}
-            onChange={idCurso}
             onClick={checkedChange}
           ></input>
-          <button className="cursoModif modif" onClick={getCursos}>
-            BUSCAR
-          </button>
+          <button className="cursoModif modif" onClick={getCursos}></button>
+          <button className="cursoModif elim">{<FaTrash />}</button>
         </div>
       </div>
     </div>
   );
 };
 
-export default ListarCursos;
+export default CursosListar;

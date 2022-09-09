@@ -144,16 +144,26 @@
   visibility: visible;
   cursor: pointer;
 }
-/* .checked-cursos {
-  visibility: hidden;
-} */
 .form-modif-curso {
-  visibility: hidden;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: flex-start;
 }
+.form-modif.curso {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
 .checked-cursos:checked .form-modif-curso {
   visibility: visible;
 }
-.modificarCurso {
+.listaCursos {
+  display: flex;
+  align-items: center;
+  flex-direction: row-reverse;
 }
 
 /* DISEÑO RESPONSIVE */
