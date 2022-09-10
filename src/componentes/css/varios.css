@@ -1,14 +1,5 @@
-/* Error */
-.error404 {
-  width: 100%;
-  height: 100%;
-  background-image: url(../../archivos/ERROR404NOTFOUND.png);
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
-}
-
-/* Cursos/Docente: mostrar */
+/* TODOCursos/Docente: mostrar */
+/* todo listar Docentes y Cursos */
 .mapcursos,
 .mapdocente {
   width: 95vw;
@@ -18,6 +9,25 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 65px;
+}
+.botonModif {
+  height: 6vh;
+  width: 8vw;
+  border-radius: 10px;
+  margin: 5px;
+}
+.cont.BotonModif {
+  height: 3vh;
+  margin: 0.5em;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.checked-cursos {
+  width: 25px;
+  height: 25px;
+  border-radius: 50px;
 }
 
 .individuo,
@@ -32,11 +42,7 @@
   align-items: flex-start;
   padding: 15px;
   min-width: 10em;
-  display: flex;
-  flex-direction: column;
   justify-content: center;
-  align-items: flex-start;
-
   background-color: rgb(218, 187, 153);
   box-shadow: 10px 10px 5px 1px #f5f0f0,
     3px 3px 100px 11px rgb(111, 117, 109) inset;
@@ -45,6 +51,18 @@
   height: fit-content;
   box-shadow: -10px -10px 5px 1px #f5f0f0, -3px -3px 10px 11px #353434 inset;
 }
+.listaCursos {
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.individuo:hover .botones {
+  visibility: visible;
+  cursor: pointer;
+}
+/* todo Tambien de Personal mostrar */
 .etiquetas {
   font-size: xx-large;
   margin: 10px 30px;
@@ -61,20 +79,39 @@
   width: 21vw;
   margin: 5px;
 }
-/* #cursocheckb {
-  display: none;
-} */
+.botones {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 20vw;
+  height: 7vh;
+  align-self: center;
+  visibility: hidden;
+}
+
 .nuevoCursoContainer {
-  display: block;
+  display: flex;
   width: 100vw;
   height: 12vh;
+  align-items: center;
+  justify-content: space-around;
 }
+.checked-cursos:checked .form-modif-curso {
+  visibility: visible;
+}
+.botonModif .curso {
+  width: 13vw;
+  height: 6vh;
+  border-radius: 5px;
+}
+
+/* todo  Cursos CrearCurso */
 .crearCurso {
   width: 8vw;
   height: 1.5rem;
 }
 
-/* Personal */
+/* todo Personal */
 .personal {
   width: 100vw;
   height: 100vh;
@@ -85,12 +122,13 @@
   flex-wrap: wrap;
   margin: 65px;
 }
+
+/* todo personalMostrar */
 .docenteMostrar {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  width: 35vw;
+  align-items: flex-start;
   height: 50vh;
   margin: 30px;
   border: 1px solid white;
@@ -99,12 +137,9 @@
   background-color: rgb(218, 187, 153);
   box-shadow: 10px 10px 5px 1px #f5f0f0,
     3px 3px 100px 11px rgb(111, 117, 109) inset;
-  display: flex;
-  flex-direction: column;
   flex-wrap: wrap;
-  align-items: flex-start;
   padding: 15px;
-  transition: all 0.5s;
+  transition: all 0.7s ease-out;
 }
 .docenteMostrar:hover {
   transform: scale(1.5);
@@ -120,99 +155,57 @@
   margin: 20px;
   font-size: xx-large;
 }
-/* selector de accion */
-.div-form-selector {
-  display: block;
-  width: 100vw;
-  margin: 20px;
-}
-.form-selector {
-  position: absolute;
-  top: 60px;
-  right: 50vw;
-  margin: 10px;
-}
-
+/* todo NuevoCurso */
 .crearCursoPage {
   display: block;
   width: 80vw;
 }
 
-.botones {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 20vw;
-  height: 7vh;
-  align-self: center;
-  visibility: hidden;
-}
+/*  todo cursosModif  */
 
-.modificar,
-.eliminar {
-  border-radius: 40px;
-  width: 7vw;
-  height: 5vh;
-  align-self: center;
-  justify-self: center;
-}
-.individuo:hover .botones {
-  visibility: visible;
-  cursor: pointer;
-}
-.form-cursosmod,
-.listaCursos {
-  display: flex;
-  flex-direction: row-reverse;
-  align-items: flex-start;
-  justify-content: flex-start;
-}
 .form-cursosmod {
+  margin: 40px;
+  margin-left: 6vw;
+  width: 25vw;
+  border: 1px solid white;
+  height: 55vh;
+  border-radius: 0 25px;
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 15px;
+  min-width: 10em;
   justify-content: center;
-  align-items: center;
-  width: 25vw;
-  height: 50vh;
-  margin: 30px;
-  border: 1px solid white;
-  border-radius: 0 25px;
   background-color: rgb(218, 187, 153);
   box-shadow: 10px 10px 5px 1px #f5f0f0,
     3px 3px 100px 11px rgb(111, 117, 109) inset;
-
-  padding: 15px;
 }
 .form-modif-curso {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 15vh;
+  width: 20vw;
 }
 .form-modif.curso {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
+  width: 18vw;
+}
+.nombreCursoModif,
+.aulaCursoModif,
+.opcionCursoModif,
+.precioCursoModif {
+  width: 18vw;
+  height: 5vh;
+  margin: 1em;
+  border-radius: 10px;
+  font-size: large;
 }
 
-.checked-cursos:checked .form-modif-curso {
-  visibility: visible;
-}
-.botonModif .curso {
-  width: 13vw;
-  height: 6vh;
-  border-radius: 5px;
-}
-.botonModif {
-  height: 6vh;
-  width: 8vw;
-}
-.checked-cursos {
-  width: 25px;
-  height: 25px;
-}
 .imgBoton {
   width: 6vw;
   height: 3vh;

@@ -2,6 +2,7 @@ import axios from "axios";
 import React from "react";
 import { useState, useEffect } from "react";
 import BuscarResp from "./BuscarResp";
+import "./css/formularios.css";
 const Buscar = () => {
   const [query, setQuery] = useState();
   const [datos, setDatos] = useState([]);

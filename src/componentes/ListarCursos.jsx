@@ -1,7 +1,6 @@
 import React from "react";
-import { FaEdit, FaTrash } from "react-icons/fa";
 import "./css/varios.css";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
 import CursosModif from "./CursosModif";
 import axios from "axios";

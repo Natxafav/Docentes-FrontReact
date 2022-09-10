@@ -4,6 +4,7 @@ import { useState, useEffect } from "react";
 import ListarDocentes from "./ListarDocentes";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
 import { useNavigate } from "react-router-dom";
+import "./css/varios.css";
 
 const Docentes = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
@@ -30,24 +31,6 @@ const Docentes = () => {
 
   return (
     <div className=" mapdocente">
-      <div className="div-form-selector">
-        <form action="#" className="form-selector">
-          <select name="accion" className="selector">
-            <option className="accion" value={""}>
-              Seleccionar acción.{" "}
-            </option>
-            <option className="buscar" value={"buscar"}>
-              Buscar
-            </option>
-            <option className="modificar" value={"modificar"}>
-              Modificar
-            </option>
-            <option className="eliminar" value={"eliminar"}>
-              Eliminar
-            </option>
-          </select>
-        </form>
-      </div>
       {todosDocentes.map((docente) => {
         return <ListarDocentes key={docente._id} docente={docente} />;
       })}

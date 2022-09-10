@@ -3,7 +3,7 @@
   box-sizing: border-box;
 }
 /* //rgb(211, 212, 204) */
-/* Inicio */
+/* TODO Inicio */
 .welcome {
   width: 100vw;
   height: 100vh;
@@ -17,7 +17,7 @@
   justify-content: center;
   align-items: center;
 }
-.mensaje {
+.pantallaInicio {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -25,16 +25,21 @@
   right: 50vw;
   bottom: 50vh;
 }
-/* Login register */
-.label-container {
-  position: absolute;
-  top: 100%;
-  right: 48%;
+.buscarInicio {
+  top: 25vh;
 }
+.mensaje-inicio {
+  font-size: 1.3em;
+  text-shadow: -3px -5px 3px rgb(14, 13, 8);
+}
+
+/* TODO Login register */
+/* NuevoCurso --> crearCursoPAge*/
 .register-page,
 .login-page,
 .crearCursoPage {
   display: block;
+  /* !Ver crearCurso para eliminar el block */
   position: absolute;
   top: 0;
   width: 100vw;
@@ -46,14 +51,12 @@
   background-size: cover;
   align-self: center;
 }
+
 .login-page,
 .register-page {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-.register-page {
-  color: black;
 }
 
 .form-container {
@@ -73,9 +76,14 @@
   align-items: flex-start;
   padding: 15px;
 }
-.form-input,
-#opcion,
-#aula {
+
+.label-container {
+  position: absolute;
+  top: 100%;
+  right: 48%;
+}
+/* nuevoCurso y  */
+.form-input {
   width: 30vw;
   min-height: 30px;
   margin: 5px;
@@ -84,6 +92,22 @@
 .button-container {
   align-self: center;
 }
-.buscarInicio {
-  top: 25vh;
+/* TODO  Error */
+.containerError {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  z-index: 20;
+  background-color: black;
+}
+.error404 {
+  width: 60vw;
+  height: 60vh;
+  background-image: url(../../archivos/ERROR404NOTFOUND.png);
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  z-index: 10;
 }

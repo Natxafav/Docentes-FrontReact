@@ -74,12 +74,14 @@ const CursosModif = ({ cursoConcreto }) => {
       <div className="form-modif-curso">
         <form action="#" className="form-modif curso">
           <input
+            className="nombreCursoModif"
             type="text"
             value={cursos}
             placeholder={cursoConcreto.curso}
             onChange={gestorCurso}
           />
           <select
+            className="aulaCursoModif"
             onChange={gestorAula}
             name="aula"
             id="aula"
@@ -94,6 +96,7 @@ const CursosModif = ({ cursoConcreto }) => {
           </select>
 
           <select
+            className="opcionCursoModif"
             value={opciones}
             name="opcion"
             id="opcion"
@@ -107,12 +110,13 @@ const CursosModif = ({ cursoConcreto }) => {
           </select>
 
           <input
+            className="precioCursoModif"
             onChange={gestorPrecio}
             type="text"
             value={precios}
             placeholder={cursoConcreto.precio}
           />
-          <div>
+          <div className="cont BotonModif">
             <button className="botonModif modif" onClick={modificarCurso}>
               {<FaEdit className="imgBoton" />}
             </button>

@@ -5,11 +5,16 @@ import Buscar from "./Buscar";
 const Inicio = () => {
   return (
     <div className="welcome">
-      <div className="mensaje">
+      <div className="pantallaInicio">
         <div className="buscarInicio">
           <Buscar />
         </div>
-        Necesitas loguearte o registrarte para acceder.
+      </div>
+      <div>
+        <h4 className="mensaje-inicio">
+          {" "}
+          Necesitas loguearte o registrarte para acceder.
+        </h4>
       </div>
     </div>
   );
