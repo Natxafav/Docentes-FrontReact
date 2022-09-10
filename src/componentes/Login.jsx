@@ -4,7 +4,7 @@ import axios from "axios";
 import "./css/formularios.css";
 import { useNavigate } from "react-router-dom";
 
-const Login = ({ gestionarLogin }) => {
+const Login = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/login`;
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
@@ -33,7 +33,6 @@ const Login = ({ gestionarLogin }) => {
               email: resp.data.email,
             })
           );
-          gestionarLogin(true);
 
           navegar("/personal");
         }

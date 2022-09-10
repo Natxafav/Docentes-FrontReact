@@ -13,7 +13,8 @@
   justify-content: flex-start;
   font-size: calc(15px + 2vmin);
   color: white;
-  background-image: url(../src/archivos/azul-abstracto.jpg);
+
+  background-image: url(../src/archivos/Portada.jpg);
   background-repeat: no-repeat;
   background-size: cover;
 }
@@ -25,9 +26,13 @@
   justify-content: space-between;
   align-items: center;
   z-index: 3;
-  background-image: url(../src/archivos/azul-abstracto.jpg);
+  background-image: url(../src/archivos/Portada.jpg);
   background-repeat: no-repeat;
   background-size: cover;
+  opacity: 0.5;
+}
+.menu-navbar:active {
+  opacity: 1;
 }
 .navbar {
   display: flex;
@@ -88,10 +93,11 @@
     display: flex;
     justify-content: center;
     margin: 0;
+    border-bottom: 2px solid white;
   }
   #checkb:checked ~ .list {
     left: 0;
     cursor: pointer;
-    transition: all 0.25s;
+    transition: all 0.5s;
   }
 }

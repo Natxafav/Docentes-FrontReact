@@ -70,9 +70,9 @@ const CursosModif = ({ cursoConcreto }) => {
     setPrecios(e.target.value);
   };
   return (
-    <div>
+    <div className="form-cursosmod">
       <div className="form-modif-curso">
-        <form action="#">
+        <form action="#" className="form-modif curso">
           <input
             type="text"
             value={cursos}

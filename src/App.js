@@ -20,14 +20,6 @@ import NuevoCurso from "./componentes/NuevoCurso";
 import CursosModif from "./componentes/CursosModif";
 
 const App = () => {
-  // const gestionarLogin = (dato) => {
-  //   setLogin(dato);
-  // };
-  // const gestionarLogout = (dato) => {
-  //   setLogin(dato);
-  // };
-  // console.log("Login :" + login);
-
   const datosToken = JSON.parse(localStorage.getItem("DatosUsuario"));
 
   const [login, setLogin] = useState(datosToken !== null);

@@ -6,7 +6,7 @@ const PersonalMostrar = ({ dato }) => {
   });
 
   return (
-    <div className="docente">
+    <div className="docenteMostrar">
       <div className="etiquetas">Nombre: </div>
       <div className="datoDocente personal">{dato.nombre}</div>
 

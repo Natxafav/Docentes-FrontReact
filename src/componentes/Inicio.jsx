@@ -5,8 +5,10 @@ import Buscar from "./Buscar";
 const Inicio = () => {
   return (
     <div className="welcome">
-      <Buscar />
       <div className="mensaje">
+        <div className="buscarInicio">
+          <Buscar />
+        </div>
         Necesitas loguearte o registrarte para acceder.
       </div>
     </div>
