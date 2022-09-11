@@ -28,16 +28,22 @@ const Buscar = () => {
   }, [query]);
 
   return (
-    <div>
-      <input
-        type="text"
-        name="busca"
-        className="buscarCurso"
-        placeholder="Buscar por curso"
-        onChange={gestorBusca}
-        onKeyDown={gestorTecla}
-      ></input>
-      <BuscarResp datos={datos} />
+    <div className="slider container">
+      <div className="buscarFuncion">
+        <input
+          type="text"
+          name="busca"
+          className="buscarCurso"
+          placeholder="Buscar por curso"
+          onChange={gestorBusca}
+          onKeyDown={gestorTecla}
+        ></input>
+      </div>
+      <div className="contenSlider">
+        {datos.map((datos) => {
+          return <BuscarResp dato={datos} />;
+        })}
+      </div>
     </div>
   );
 };

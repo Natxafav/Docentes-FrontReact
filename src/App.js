@@ -18,6 +18,8 @@ import Personal from "./componentes/Personal";
 import { useState } from "react";
 import NuevoCurso from "./componentes/NuevoCurso";
 import CursosModif from "./componentes/CursosModif";
+import BuscarResp from "./componentes/BuscarResp";
+import Buscar from "./componentes/Buscar";
 
 const App = () => {
   const datosToken = JSON.parse(localStorage.getItem("DatosUsuario"));
@@ -74,12 +76,10 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Inicio />} />
           <Route path="/login" element={<Login />} />
-
+          <Route path="/buscar" element={<Buscar />} />
           <Route path="/registro" element={<Register />} />
           <Route path="/404" element={<Error />} />
-          {/* En caso de que se ponga algo distinto */}
           <Route path="*" element={<Navigate to="/404" replace />} />
-          {/* <Route path="/docentes/personal" element={<Personal />} /> */}
           <Route path="/docentes" element={<Docentes />} />
           <Route path="/cursos" element={<Cursos />} />
           <Route path="/logout" element={<Logout />} />

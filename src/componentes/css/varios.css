@@ -3,7 +3,7 @@
 .mapcursos,
 .mapdocente {
   width: 95vw;
-  height: fit-content;
+
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -56,6 +56,7 @@
   flex-direction: row-reverse;
   align-items: flex-start;
   justify-content: flex-start;
+  flex-wrap: wrap;
 }
 
 .individuo:hover .botones {
@@ -99,16 +100,19 @@
 .checked-cursos:checked .form-modif-curso {
   visibility: visible;
 }
-.botonModif .curso {
+.botonModif.curso {
   width: 13vw;
   height: 6vh;
-  border-radius: 5px;
+  border-radius: 10px;
 }
 
 /* todo  Cursos CrearCurso */
 .crearCurso {
-  width: 8vw;
-  height: 1.5rem;
+  width: 15vh;
+  height: 5vh;
+  font-size: large;
+  text-align: center;
+  border-radius: 10px;
 }
 
 /* todo Personal */
@@ -157,18 +161,43 @@
 }
 /* todo NuevoCurso */
 .crearCursoPage {
-  display: block;
-  width: 80vw;
+  width: 95vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 65px;
 }
-
+.form-container.newCurso {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+.form-input.newCurso {
+  width: 25vw;
+  height: 5vh;
+  margin: 1em;
+  border-radius: 10px;
+  font-size: large;
+}
+.button-container.register .enviar {
+  width: 18vw;
+  height: 6vh;
+  border-radius: 10px;
+  font-size: large;
+}
 /*  todo cursosModif  */
 
 .form-cursosmod {
-  margin: 40px;
-  margin-left: 6vw;
-  width: 25vw;
+  margin: 45px;
+  margin-left: 6.5vw;
+  width: 28vw;
   border: 1px solid white;
-  height: 55vh;
+  height: 58vh;
   border-radius: 0 25px;
   display: flex;
   flex-direction: column;
@@ -186,20 +215,20 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 20vw;
+  width: 28vw;
 }
 .form-modif.curso {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: flex-start;
-  width: 18vw;
+  width: 28vw;
 }
 .nombreCursoModif,
 .aulaCursoModif,
 .opcionCursoModif,
 .precioCursoModif {
-  width: 18vw;
+  width: 25vw;
   height: 5vh;
   margin: 1em;
   border-radius: 10px;
@@ -213,6 +242,9 @@
 .buscarCurso {
   width: 15vh;
   height: 5vh;
+  font-size: large;
+  text-align: center;
+  border-radius: 10px;
 }
 
 /* DISEÑO RESPONSIVE */

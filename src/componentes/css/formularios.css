@@ -6,7 +6,7 @@
 /* TODO Inicio */
 .welcome {
   width: 100vw;
-  height: 100vh;
+  height: 95vh;
   align-self: center;
   background-image: url(../../archivos/Portada.jpg);
   position: inherit;
@@ -19,14 +19,22 @@
 }
 .pantallaInicio {
   display: flex;
-  flex-direction: column;
+  width: 100vw;
+  height: 95vh;
+  flex-direction: row;
   justify-content: center;
   align-items: center;
   right: 50vw;
   bottom: 50vh;
 }
 .buscarInicio {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
   top: 25vh;
+  width: 100vw;
+  height: 89vh;
 }
 .mensaje-inicio {
   font-size: 1.3em;
@@ -110,4 +118,78 @@
   background-size: contain;
   background-repeat: no-repeat;
   z-index: 10;
+}
+/* todo Buscar formulario */
+.buscarFuncion {
+  position: absolute;
+  top: 20vh;
+}
+.pintar.mapeoBuscarResp {
+  margin: 8vw;
+  border: 1px solid white;
+  width: 55vw;
+  height: 20vh;
+  border-radius: 0 25px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 15px;
+  min-width: 10em;
+  justify-content: center;
+  background-color: rgb(218, 187, 153);
+  box-shadow: 10px 10px 5px 1px #f5f0f0,
+    3px 3px 100px 11px rgb(111, 117, 109) inset;
+  animation: cambio 20s infinite;
+  animation-direction: alternate;
+}
+.slider.container {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+  width: 100vw;
+  height: 80vh;
+}
+.contenSlider {
+  width: 100vw;
+  height: 50vh;
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.slider {
+  width: 100vw;
+  margin: 0 1 2vw;
+}
+@keyframes cambio {
+  0% {
+    margin-left: 0%;
+  }
+  20% {
+    margin-left: 0%;
+  }
+
+  25% {
+    margin-left: -100%;
+  }
+  45% {
+    margin-left: -100%;
+  }
+
+  50% {
+    margin-left: -200%;
+  }
+  70% {
+    margin-left: -200%;
+  }
+
+  75% {
+    margin-left: -300%;
+  }
+  100% {
+    margin-left: -300%;
+  }
 }

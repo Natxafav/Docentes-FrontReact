@@ -51,12 +51,14 @@
 .list {
   width: 70vw;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 .navlink {
   margin: 3px;
   list-style: none;
+  font-weight: 600;
+  text-shadow: 3px 3px 4px black, -4px -4px 2px black;
 }
 #checkb,
 .navLabel,

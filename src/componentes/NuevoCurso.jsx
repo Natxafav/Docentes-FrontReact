@@ -69,6 +69,7 @@ const NuevoCurso = () => {
           "Longitud minima de 5 caracteres"}
 
         <select
+          className="form-input newCurso"
           name="opcion"
           id="opcion"
           {...register("opcion", { required: true })}
@@ -82,7 +83,12 @@ const NuevoCurso = () => {
           errors.opcion.type === "required" &&
           "Campo requerido"}
 
-        <select name="aula" id="aula" {...register("aula", { required: true })}>
+        <select
+          name="aula"
+          className="form-input newCurso"
+          id="aula"
+          {...register("aula", { required: true })}
+        >
           <option value="">Seleccione aula</option>
           <option value="Aula-1">Aula-1</option>
           <option value="Aula-2">Aula-2</option>
@@ -111,11 +117,7 @@ const NuevoCurso = () => {
           "Longitud minima de 5 caracteres"}
 
         <div className="button-container register">
-          <input
-            className="enviar"
-            type="submit"
-            value="Crear curso nuevo"
-          ></input>
+          <input className="enviar" type="submit" value="Crear curso."></input>
         </div>
       </form>
     </div>

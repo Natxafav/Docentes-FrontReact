@@ -33,10 +33,6 @@ const ListarCursos = ({ curso }) => {
 
   console.log("dato " + date + " fuera de ontenerIdCurso  " + userId);
 
-  const goTo = () => {
-    navegar("/cursos/modificar");
-  };
-
   const getCursos = async () => {
     await axios
       .get(URL + userId, {
