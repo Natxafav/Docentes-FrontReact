@@ -18,14 +18,13 @@ import Personal from "./componentes/Personal";
 import { useState } from "react";
 import NuevoCurso from "./componentes/NuevoCurso";
 import CursosModif from "./componentes/CursosModif";
-import BuscarResp from "./componentes/BuscarResp";
+
 import Buscar from "./componentes/Buscar";
 
 const App = () => {
-  const datosToken = JSON.parse(localStorage.getItem("DatosUsuario"));
-
-  const [login, setLogin] = useState(datosToken !== null);
-
+  const datosUsuario = localStorage.getItem("DatosUsuario");
+  const datosRecuperar = datosUsuario ? JSON.parse(datosUsuario) : null;
+  const [tieneAcceso, setTieneAcceso] = useState(datosRecuperar !== null);
   return (
     <div className="App">
       <Router>
@@ -35,7 +34,7 @@ const App = () => {
             <label className="navLabel" htmlFor="checkb">
               <span className="menu-line">&#9776;</span>
             </label>
-            {!login ? (
+            {!tieneAcceso ? (
               <ul className="list">
                 <NavLink className={"navlink"} to="/">
                   INICIO

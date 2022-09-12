@@ -58,7 +58,13 @@ const ListarCursos = ({ curso }) => {
         <div className="datocurso">{curso.aula}</div>
 
         <div className="etiquetas">Docente:</div>
-        <div className="datocurso">{curso.docente.nombre}</div>
+        <div className="datocurso">
+          {curso.docente !== null ? (
+            curso.docente.nombre
+          ) : (
+            <h4>No existe docente</h4>
+          )}
+        </div>
 
         <div className="etiquetas">Opcion:</div>
         <div className="datocurso">{curso.opcion} </div>
@@ -70,7 +76,7 @@ const ListarCursos = ({ curso }) => {
             type="checkbox"
             className="checked-cursos"
             value={curso._id}
-            checked={idCurso}
+            defaultChecked={idCurso}
             onClick={checkedChange}
           ></input>
           <button className="botonModif curso" onClick={getCursos}>

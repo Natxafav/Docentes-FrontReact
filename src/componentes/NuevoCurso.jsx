@@ -33,9 +33,7 @@ const NuevoCurso = () => {
           headers: { Authorization: "Bearer " + extraerDatosDeUsuario()[1] },
         }
       )
-      .then((res) => {
-        console.log("esta es mi respeuestasdadf" + res);
-      })
+      .then((res) => {})
       .catch((error) => {
         console.log(error.message);
       });

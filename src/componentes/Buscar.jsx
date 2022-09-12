@@ -7,7 +7,7 @@ const Buscar = () => {
   const [query, setQuery] = useState();
   const [datos, setDatos] = useState([]);
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
-  const URL_1 = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
+  // const URL_1 = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
   const gestorBusca = (e) => {
     setQuery(e.target.value);
   };
@@ -17,25 +17,16 @@ const Buscar = () => {
   };
   useEffect(() => {
     const recupera = async () => {
-      if (query.length === 0) {
-        const res = await axios.get(URL);
+      if (query.length !== 0) {
+        const res = await axios.get(URL + "buscar" + query);
         setDatos(res.data.cursos);
       } else {
-        const res = await axios.get(URL + `buscar/${query}`);
+        const res = await axios.get(URL);
         setDatos(res.data.cursos);
       }
     };
-    // const recuperaDocente = async () => {
-    //   if (query.length === 0) {
-    //     const res = await axios.get(URL_1);
-    //     setDatos(res.data.cursos);
-    //   } else {
-    //     const res = await axios.get(URL_1 + `buscar/${query}`);
-    //     setDatos(res.data.cursos);
-    //   }
-    // };
+
     recupera();
-    // recuperaDocente();
   }, [query]);
 
   return (
