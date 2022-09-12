@@ -8,7 +8,8 @@ import "./css/varios.css";
 const Personal = () => {
   const email = extraerDatosDeUsuario()[2];
 
-  const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/personal/${email}`;
+  // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/personal/${email}`;
+  const URL = `https://winged-carrier-361708.oa.r.appspot.com/api/docentes/personal/${email}`;
 
   const [usuario, setUsuario] = useState([]);
 

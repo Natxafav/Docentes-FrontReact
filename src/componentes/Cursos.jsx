@@ -8,7 +8,8 @@ import "./css/varios.css";
 import Buscar from "./Buscar";
 
 const Cursos = () => {
-  const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
+  // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
+  const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos/";
 
   const [todosCursos, setTodosCursos] = useState([]);
   // const [userId, setUserId] = useState(null);
