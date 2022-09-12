@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 const ListarCursos = ({ curso }) => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
   const [userId, setUserId] = useState();
-  const [isChecked, setIsChecked] = useState(false);
+  const [checked, setChecked] = useState(false);
   const [cursoConcreto, setCursoConcreto] = useState({
     _id: null,
     curso: "",
@@ -21,13 +21,13 @@ const ListarCursos = ({ curso }) => {
 
   const navegar = useNavigate();
   const checkedChange = (e) => {
-    setIsChecked(!isChecked);
+    setChecked(!checked);
     setUserId(e.target.value);
   };
   const idCurso = (e) => {
     setUserId(e.target.value);
   };
-  console.log(isChecked);
+  console.log(checked);
   console.log(curso._id + "del seleccionado");
   const date = new Date();
 
@@ -46,10 +46,9 @@ const ListarCursos = ({ curso }) => {
       });
   };
 
-  console.log(cursoConcreto);
   return (
     <div className="listaCursos">
-      {isChecked ? <CursosModif cursoConcreto={cursoConcreto} /> : null}
+      {checked ? <CursosModif cursoConcreto={cursoConcreto} /> : null}
 
       <div className="individuo">
         <div className="etiquetas">Curso: </div>
@@ -71,7 +70,7 @@ const ListarCursos = ({ curso }) => {
             type="checkbox"
             className="checked-cursos"
             value={curso._id}
-            isChecked={idCurso}
+            checked={idCurso}
             onClick={checkedChange}
           ></input>
           <button className="botonModif curso" onClick={getCursos}>

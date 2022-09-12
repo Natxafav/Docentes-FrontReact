@@ -3,7 +3,7 @@
 }
 
 .App {
-  height: fit-content;
+  height: max-content;
   list-style: none;
   text-decoration: none;
   min-width: calc(30vw + 3em);

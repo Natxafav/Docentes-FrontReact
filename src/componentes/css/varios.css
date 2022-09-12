@@ -3,12 +3,15 @@
 .mapcursos,
 .mapdocente {
   width: 95vw;
-
+  height: max-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
   flex-wrap: wrap;
   margin: 65px;
+}
+.mapdocente {
+  height: 100vh;
 }
 .botonModif {
   height: 6vh;
@@ -240,7 +243,7 @@
   height: 3vh;
 }
 .buscarCurso {
-  width: 15vh;
+  width: 25vw;
   height: 5vh;
   font-size: large;
   text-align: center;

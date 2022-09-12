@@ -51,6 +51,9 @@ const App = () => {
               </ul>
             ) : (
               <ul className="list">
+                <NavLink className={"navlink"} to="/">
+                  INICIO
+                </NavLink>
                 <NavLink className={"navlink"} to="/docentes">
                   DOCENTES
                 </NavLink>

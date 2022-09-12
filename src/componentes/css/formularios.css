@@ -6,7 +6,7 @@
 /* TODO Inicio */
 .welcome {
   width: 100vw;
-  height: 95vh;
+  height: 100vh;
   align-self: center;
   background-image: url(../../archivos/Portada.jpg);
   position: inherit;
@@ -34,7 +34,7 @@
   justify-content: center;
   top: 25vh;
   width: 100vw;
-  height: 89vh;
+  height: 70vh;
 }
 .mensaje-inicio {
   font-size: 1.3em;
@@ -122,37 +122,41 @@
 /* todo Buscar formulario */
 .buscarFuncion {
   position: absolute;
-  top: 20vh;
+  top: 10vh;
 }
+
 .pintar.mapeoBuscarResp {
   margin: 8vw;
+  position: absolute;
+  top: 13vh;
   border: 1px solid white;
-  width: 55vw;
-  height: 20vh;
+  width: 20vw;
+  height: 40vh;
   border-radius: 0 25px;
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  align-items: center;
+  align-items: space;
   padding: 15px;
   min-width: 10em;
-  justify-content: center;
+  justify-content: space-between;
   background-color: rgb(218, 187, 153);
   box-shadow: 10px 10px 5px 1px #f5f0f0,
     3px 3px 100px 11px rgb(111, 117, 109) inset;
   animation: cambio 20s infinite;
   animation-direction: alternate;
 }
-.slider.container {
+.contGeneralSl {
   display: flex;
   align-items: center;
   flex-direction: row;
   justify-content: center;
   width: 100vw;
   height: 80vh;
+  perspective: 700px;
 }
 .contenSlider {
-  width: 100vw;
+  width: 300vw;
   height: 50vh;
   display: flex;
   align-items: center;
@@ -161,8 +165,8 @@
 }
 
 .slider {
-  width: 100vw;
-  margin: 0 1 2vw;
+  width: 50vw;
+  margin: 0 15vw;
 }
 @keyframes cambio {
   0% {
