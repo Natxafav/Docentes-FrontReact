@@ -7,8 +7,8 @@ import { useNavigate } from "react-router-dom";
 import "./css/varios.css";
 
 const Docentes = () => {
-  // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
-  const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
+  const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
+  // const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
 
   const [todosDocentes, setTodosDocentes] = useState([]);
 

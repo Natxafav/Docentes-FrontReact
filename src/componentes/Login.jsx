@@ -5,9 +5,9 @@ import "./css/formularios.css";
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
-  // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/login`;
-  const URL =
-    "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/login";
+  const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/login`;
+  // const URL =
+  //   "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/login";
   const [email, setEmail] = useState("");
   const [pass, setPass] = useState("");
 
@@ -22,9 +22,9 @@ const Login = () => {
         password: pass,
       })
       .then((resp) => {
-        console.log("docenteok  " + resp.data.docenteok);
+        console.log("Docente logueado" + resp.data);
+
         if (resp.data.docenteok === false) {
-          console.log("docent en ifeok  " + resp.data.docenteok);
           navegar("/");
         } else {
           localStorage.setItem(

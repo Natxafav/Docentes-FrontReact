@@ -11,8 +11,8 @@ const ListarDocentes = ({ docente }) => {
     return <div key={dato._id}>{dato.curso}</div>;
   });
 
-  // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
-  const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
+  const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
+  // const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
   const [userId, setUserId] = useState();
   const [cheched, setCheched] = useState(false);
   const [docenteConcreto, setDocenteConcreto] = useState({

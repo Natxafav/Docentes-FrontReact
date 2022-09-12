@@ -6,8 +6,8 @@ import "./css/formularios.css";
 const Buscar = () => {
   const [query, setQuery] = useState();
   const [datos, setDatos] = useState([]);
-  const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos";
-  // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
+  // const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos";
+  const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos`;
   // const URL_1 = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
   const gestorBusca = (e) => {
     setQuery(e.target.value);
@@ -26,17 +26,8 @@ const Buscar = () => {
         setDatos(res.data.cursos);
       }
     };
-    // const recuperaDocente = async () => {
-    //   if (query.length === 0) {
-    //     const res = await axios.get(URL_1);
-    //     setDatos(res.data.cursos);
-    //   } else {
-    //     const res = await axios.get(URL_1 + `buscar/${query}`);
-    //     setDatos(res.data.cursos);
-    //   }
-    // };
+
     recupera();
-    // recuperaDocente();
   }, [query]);
 
   return (

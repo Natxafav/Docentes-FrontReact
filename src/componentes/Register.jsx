@@ -6,8 +6,8 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
 const Register = () => {
-  // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
-  const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
+  const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
+  // const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
   const navegar = useNavigate();
   const {
     setValue,
@@ -38,8 +38,8 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
       });
+    navegar("/inicio");
 
-    navegar("/personal");
     setValue("nombre", null);
     setValue("email", null);
     setValue("password", null);

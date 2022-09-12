@@ -35,7 +35,7 @@ const App = () => {
             <label className="navLabel" htmlFor="checkb">
               <span className="menu-line">&#9776;</span>
             </label>
-            {!login ? (
+            {datosToken ? (
               <ul className="list">
                 <NavLink className={"navlink"} to="/">
                   INICIO
