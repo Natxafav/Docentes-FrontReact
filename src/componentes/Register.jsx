@@ -5,7 +5,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-const Register = ({ gestionarLogin }) => {
+const Register = () => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
   const navegar = useNavigate();
   const {
@@ -37,7 +37,7 @@ const Register = ({ gestionarLogin }) => {
       .catch((error) => {
         console.log(error);
       });
-    gestionarLogin(true);
+
     navegar("/personal");
     setValue("nombre", null);
     setValue("email", null);

@@ -5,8 +5,6 @@ import { extraerDatosDeUsuario } from "./Funcionalidad";
 import CursosModif from "./CursosModif";
 import axios from "axios";
 
-import { useNavigate } from "react-router-dom";
-
 const ListarCursos = ({ curso }) => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
   const [userId, setUserId] = useState();
@@ -19,14 +17,11 @@ const ListarCursos = ({ curso }) => {
     aula: "",
   });
 
-  const navegar = useNavigate();
   const checkedChange = (e) => {
     setIsChecked(!isChecked);
     setUserId(e.target.value);
   };
-  const idCurso = (e) => {
-    setUserId(e.target.value);
-  };
+
   console.log(isChecked);
   console.log(curso._id + "del seleccionado");
   const date = new Date();
@@ -59,7 +54,13 @@ const ListarCursos = ({ curso }) => {
         <div className="datocurso">{curso.aula}</div>
 
         <div className="etiquetas">Docente:</div>
-        <div className="datocurso">{curso.docente.nombre}</div>
+        <div className="datocurso">
+          {curso.docente !== null ? (
+            curso.docente.nombre
+          ) : (
+            <h4>No existe docente asignado</h4>
+          )}
+        </div>
 
         <div className="etiquetas">Opcion:</div>
         <div className="datocurso">{curso.opcion} </div>
@@ -71,7 +72,6 @@ const ListarCursos = ({ curso }) => {
             type="checkbox"
             className="checked-cursos"
             value={curso._id}
-            isChecked={idCurso}
             onClick={checkedChange}
           ></input>
           <button className="botonModif curso" onClick={getCursos}>
