@@ -22,10 +22,6 @@ import CursosModif from "./componentes/CursosModif";
 import Buscar from "./componentes/Buscar";
 
 const App = () => {
-  // const datosToken = JSON.parse(localStorage.getItem("DatosUsuario"));
-
-  // const [login, setLogin] = useState(datosToken !== null);
-
   const [login, setLogin] = useState(false);
   const changeLogin = (e) => {
     setLogin(e);

@@ -6,8 +6,8 @@ import CursosModif from "./CursosModif";
 import axios from "axios";
 
 const ListarCursos = ({ curso }) => {
-  const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
-  // const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos/";
+  // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
+  const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos/";
   const [userId, setUserId] = useState();
   const [checked, setChecked] = useState(false);
   const [cursoConcreto, setCursoConcreto] = useState({

@@ -7,8 +7,8 @@ import { extraerDatosDeUsuario } from "./Funcionalidad";
 import { useNavigate } from "react-router-dom";
 
 const DocentesModif = ({ docenteConcreto }) => {
-  const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
-  // const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
+  // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
+  const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
 
   console.log(docenteConcreto);
   const [docentes, setDocentes] = useState(docenteConcreto.curso);

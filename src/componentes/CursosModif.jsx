@@ -9,8 +9,8 @@ import { useNavigate } from "react-router-dom";
 const CursosModif = ({ cursoConcreto }) => {
   const navegar = useNavigate();
   const id = cursoConcreto._id;
-
-  const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
+  const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos/";
+  // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
   console.log("Curso Concreto", cursoConcreto);
   const [cursos, setCursos] = useState(cursoConcreto.curso);
   const [aulas, setAulas] = useState(cursoConcreto.aula);

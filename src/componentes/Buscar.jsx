@@ -6,9 +6,9 @@ import "./css/formularios.css";
 const Buscar = () => {
   const [query, setQuery] = useState("");
   const [datos, setDatos] = useState([]);
-  // const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos";
-  const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos`;
-  // const URL_1 = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
+  const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos";
+  // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos`;
+
   const gestorBusca = (e) => {
     setQuery(e.target.value);
   };
