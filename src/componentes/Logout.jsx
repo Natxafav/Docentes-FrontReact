@@ -2,15 +2,22 @@ import React from "react";
 import { useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
-const Logout = () => {
+const Logout = ({ changeLogout }) => {
   const navegar = useNavigate();
 
   const cerrarSesion = () => {
     localStorage.removeItem("DatosUsuario");
+    navegar("/");
   };
+
+  if (!localStorage.getItem("DatosUsuario")) {
+    changeLogout(false);
+  } else {
+    changeLogout(true);
+  }
+
   useEffect(() => {
     cerrarSesion();
-    navegar("/");
   }, []);
 };
 

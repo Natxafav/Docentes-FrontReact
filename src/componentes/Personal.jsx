@@ -27,7 +27,7 @@ const Personal = () => {
         });
     };
     personalDocente();
-  }, [usuario]);
+  }, []);
 
   return (
     <div className="personal">

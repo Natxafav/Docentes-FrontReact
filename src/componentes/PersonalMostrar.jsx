@@ -2,7 +2,11 @@ import React from "react";
 import "./css/varios.css";
 const PersonalMostrar = ({ dato }) => {
   const docente = dato.cursos.map((dato) => {
-    return <div key={dato._id}>{dato.curso}</div>;
+    return (
+      <div className="cursosDocente" key={dato._id}>
+        {dato.curso}
+      </div>
+    );
   });
 
   return (

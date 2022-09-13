@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import BuscarResp from "./BuscarResp";
 import "./css/formularios.css";
 const Buscar = () => {
-  const [query, setQuery] = useState();
+  const [query, setQuery] = useState("");
   const [datos, setDatos] = useState([]);
   // const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos";
   const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos`;
@@ -18,11 +18,11 @@ const Buscar = () => {
   };
   useEffect(() => {
     const recupera = async () => {
-      if (query.length === 0) {
-        const res = await axios.get(URL);
+      if (query.length !== 0) {
+        const res = await axios.get(URL + `/buscar/${query}`);
         setDatos(res.data.cursos);
       } else {
-        const res = await axios.get(URL + `/buscar/${query}`);
+        const res = await axios.get(URL);
         setDatos(res.data.cursos);
       }
     };
@@ -44,7 +44,7 @@ const Buscar = () => {
       </div>
       <div className="contenSlider">
         {datos.map((datos) => {
-          return <BuscarResp dato={datos} />;
+          return <BuscarResp key={datos._id} dato={datos} />;
         })}
       </div>
     </div>

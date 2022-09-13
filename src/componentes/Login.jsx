@@ -4,7 +4,7 @@ import axios from "axios";
 import "./css/formularios.css";
 import { useNavigate } from "react-router-dom";
 
-const Login = () => {
+const Login = ({ changeLogin }) => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/login`;
   // const URL =
   //   "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/login";
@@ -15,15 +15,12 @@ const Login = () => {
 
   const usuLogin = async (e) => {
     e.preventDefault();
-
     await axios
       .post(URL, {
         email: email,
         password: pass,
       })
       .then((resp) => {
-        console.log("Docente logueado" + resp.data);
-
         if (resp.data.docenteok === false) {
           navegar("/");
         } else {
@@ -35,8 +32,6 @@ const Login = () => {
               email: resp.data.email,
             })
           );
-
-          navegar("/personal");
         }
       })
       .catch((error) => {
@@ -46,7 +41,13 @@ const Login = () => {
     if (email.trim() === "" || pass.trim() === "") {
       return;
     }
+    if (localStorage.getItem("DatosUsuario")) {
+      changeLogin(true);
+    } else {
+      changeLogin(false);
+    }
 
+    navegar("/personal");
     setEmail("");
     setPass("");
   };

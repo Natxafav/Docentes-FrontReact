@@ -18,13 +18,21 @@ import Personal from "./componentes/Personal";
 import { useState } from "react";
 import NuevoCurso from "./componentes/NuevoCurso";
 import CursosModif from "./componentes/CursosModif";
-import BuscarResp from "./componentes/BuscarResp";
+
 import Buscar from "./componentes/Buscar";
 
 const App = () => {
-  const datosToken = JSON.parse(localStorage.getItem("DatosUsuario"));
+  // const datosToken = JSON.parse(localStorage.getItem("DatosUsuario"));
 
-  const [login, setLogin] = useState(datosToken !== null);
+  // const [login, setLogin] = useState(datosToken !== null);
+
+  const [login, setLogin] = useState(false);
+  const changeLogin = (e) => {
+    setLogin(e);
+  };
+  const changeLogout = (e) => {
+    setLogin(e);
+  };
 
   return (
     <div className="App">
@@ -35,7 +43,7 @@ const App = () => {
             <label className="navLabel" htmlFor="checkb">
               <span className="menu-line">&#9776;</span>
             </label>
-            {datosToken ? (
+            {!login ? (
               <ul className="list">
                 <NavLink className={"navlink"} to="/">
                   INICIO
@@ -78,14 +86,20 @@ const App = () => {
 
         <Routes>
           <Route path="/" element={<Inicio />} />
-          <Route path="/login" element={<Login />} />
+          <Route path="/login" element={<Login changeLogin={changeLogin} />} />
           <Route path="/buscar" element={<Buscar />} />
-          <Route path="/registro" element={<Register />} />
+          <Route
+            path="/registro"
+            element={<Register changeLogin={changeLogin} />}
+          />
           <Route path="/404" element={<Error />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
           <Route path="/docentes" element={<Docentes />} />
           <Route path="/cursos" element={<Cursos />} />
-          <Route path="/logout" element={<Logout />} />
+          <Route
+            path="/logout"
+            element={<Logout changeLogout={changeLogout} />}
+          />
           <Route path="/personal" element={<Personal />} />
           <Route path="/cursos/nuevo" element={<NuevoCurso />} />
           <Route path="/cursos/modificar" element={<CursosModif />} />

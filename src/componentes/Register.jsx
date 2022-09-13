@@ -5,7 +5,7 @@ import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 
-const Register = () => {
+const Register = ({ changeLogin }) => {
   const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
   // const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
   const navegar = useNavigate();
@@ -24,8 +24,6 @@ const Register = () => {
         password: data.password,
       })
       .then((response) => {
-        console.log("login correcto");
-
         localStorage.setItem(
           "DatosUsuario",
           JSON.stringify({
@@ -38,8 +36,13 @@ const Register = () => {
       .catch((error) => {
         console.log(error);
       });
-    navegar("/inicio");
+    if (localStorage.getItem("DatosUsuario")) {
+      changeLogin(true);
+    } else {
+      changeLogin(false);
+    }
 
+    navegar("/personal");
     setValue("nombre", null);
     setValue("email", null);
     setValue("password", null);

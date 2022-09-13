@@ -4,7 +4,6 @@ import { useState } from "react";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
 import DocentesModif from "./DocentesModif";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const ListarDocentes = ({ docente }) => {
   const cursos = docente.cursos.map((dato) => {
@@ -22,20 +21,10 @@ const ListarDocentes = ({ docente }) => {
     cursos: "",
   });
 
-  const navegar = useNavigate();
-
   const checkedChange = (e) => {
     setCheched(!cheched);
     setUserId(e.target.value);
   };
-  const idDocente = (e) => {
-    setUserId(e.target.value);
-  };
-  console.log(cheched);
-  console.log(docente._id + "del seleccionado");
-  const date = new Date();
-
-  console.log("dato " + date + " fuera de ontenerIdCurso  " + userId);
 
   const getDocente = async () => {
     await axios
@@ -68,7 +57,6 @@ const ListarDocentes = ({ docente }) => {
               type="checkbox"
               className="checked-cursos"
               value={docente._id}
-              isChecked={idDocente}
               onClick={checkedChange}
             ></input>
             <button className="botonModif curso" onClick={getDocente}>

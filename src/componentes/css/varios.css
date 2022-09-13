@@ -73,6 +73,7 @@
   width: fit-content;
   text-decoration: 2px underline;
 }
+
 .datocurso,
 .datoDocente {
   align-self: flex-start;
@@ -136,10 +137,10 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  height: 50vh;
+  height: fit-content;
   margin: 30px;
   border: 1px solid white;
-  width: 40vw;
+  width: 60vw;
   border-radius: 0 25px;
   background-color: rgb(218, 187, 153);
   box-shadow: 10px 10px 5px 1px #f5f0f0,
@@ -157,10 +158,13 @@
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  width: 40vw;
+  width: 30vw;
   height: fit-content;
   margin: 20px;
-  font-size: xx-large;
+  font-size: 2vw;
+}
+.cursosDocente {
+  font-size: inherit;
 }
 /* todo NuevoCurso */
 .crearCursoPage {
