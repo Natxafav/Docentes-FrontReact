@@ -151,12 +151,12 @@
   align-items: center;
   flex-direction: row;
   justify-content: center;
-  width: 100vw;
+  width: 90vw;
   height: 80vh;
   perspective: 700px;
 }
 .contenSlider {
-  width: 100vw;
+  width: 90vw;
   height: 50vh;
   display: flex;
   align-items: center;
