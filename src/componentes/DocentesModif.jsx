@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
 import { useNavigate } from "react-router-dom";
 
-const DocentesModif = ({ docenteConcreto, changeLogin }) => {
+const DocentesModif = ({ docenteConcreto }) => {
   // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
   const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
 
@@ -14,7 +14,7 @@ const DocentesModif = ({ docenteConcreto, changeLogin }) => {
   const [emails, setEmails] = useState(docenteConcreto.email);
 
   const idUsuario = docenteConcreto._id;
-  changeLogin();
+
   const navegar = useNavigate();
 
   const modificarDocente = async (e) => {

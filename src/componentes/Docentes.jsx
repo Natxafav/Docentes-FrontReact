@@ -6,12 +6,11 @@ import { extraerDatosDeUsuario } from "./Funcionalidad";
 
 import "./css/varios.css";
 
-const Docentes = ({ changeLogin }) => {
+const Docentes = () => {
   // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
   const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
 
   const [todosDocentes, setTodosDocentes] = useState([]);
-  changeLogin();
 
   const getDocentes = async () => {
     await axios

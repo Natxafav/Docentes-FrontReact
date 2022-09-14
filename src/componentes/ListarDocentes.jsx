@@ -5,7 +5,7 @@ import { extraerDatosDeUsuario } from "./Funcionalidad";
 import DocentesModif from "./DocentesModif";
 import axios from "axios";
 
-const ListarDocentes = ({ docente, changeLogin }) => {
+const ListarDocentes = ({ docente }) => {
   const cursos = docente.cursos.map((dato) => {
     return <div key={dato._id}>{dato.curso}</div>;
   });
@@ -20,7 +20,7 @@ const ListarDocentes = ({ docente, changeLogin }) => {
     email: "",
     cursos: "",
   });
-  changeLogin();
+
   const checkedChange = (e) => {
     setCheched(!cheched);
     setUserId(e.target.value);

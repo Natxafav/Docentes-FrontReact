@@ -6,7 +6,7 @@ import ListarCursos from "./ListarCursos";
 import { useNavigate } from "react-router-dom";
 import "./css/varios.css";
 
-const Cursos = ({ changeLogin }) => {
+const Cursos = () => {
   // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
   const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos/";
 
@@ -17,7 +17,7 @@ const Cursos = ({ changeLogin }) => {
   const goTo = () => {
     navegar("/cursos/nuevo");
   };
-  changeLogin();
+
   useEffect(() => {
     const getCursos = async () => {
       await axios

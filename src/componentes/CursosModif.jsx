@@ -6,7 +6,7 @@ import { useState, useEffect } from "react";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
 import { useNavigate } from "react-router-dom";
 
-const CursosModif = ({ cursoConcreto, changeLogin }) => {
+const CursosModif = ({ cursoConcreto }) => {
   const navegar = useNavigate();
   const id = cursoConcreto._id;
   const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos/";
@@ -16,7 +16,7 @@ const CursosModif = ({ cursoConcreto, changeLogin }) => {
   const [aulas, setAulas] = useState(cursoConcreto.aula);
   const [opciones, setOpciones] = useState(cursoConcreto.opcion);
   const [precios, setPrecios] = useState(cursoConcreto.precio);
-  changeLogin();
+
   const modificarCurso = async (e) => {
     e.preventDefault();
     await axios

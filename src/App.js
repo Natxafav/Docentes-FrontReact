@@ -21,7 +21,7 @@ import CursosModif from "./componentes/CursosModif";
 import Buscar from "./componentes/Buscar";
 
 const App = () => {
-  const [login, setLogin] = useState();
+  const [login, setLogin] = useState(false);
   const changeLogin = () => {
     setLogin(true);
   };
@@ -81,7 +81,7 @@ const App = () => {
         {/* A donde se dirige, el componente */}
 
         <Routes>
-          <Route path="/" element={<Inicio changeLogin={changeLogin} />} />
+          <Route path="/" element={<Inicio />} />
           <Route path="/login" element={<Login changeLogin={changeLogin} />} />
           <Route path="/buscar" element={<Buscar />} />
           <Route
@@ -90,30 +90,15 @@ const App = () => {
           />
           <Route path="/404" element={<Error />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
-          <Route
-            path="/docentes"
-            element={<Docentes changeLogin={changeLogin} />}
-          />
-          <Route
-            path="/cursos"
-            element={<Cursos changeLogin={changeLogin} />}
-          />
+          <Route path="/docentes" element={<Docentes />} />
+          <Route path="/cursos" element={<Cursos />} />
           <Route
             path="/logout"
             element={<Logout changeLogout={changeLogout} />}
           />
-          <Route
-            path="/personal"
-            element={<Personal changeLogin={changeLogin} />}
-          />
-          <Route
-            path="/cursos/nuevo"
-            element={<NuevoCurso changeLogin={changeLogin} />}
-          />
-          <Route
-            path="/cursos/modificar"
-            element={<CursosModif changeLogin={changeLogin} />}
-          />
+          <Route path="/personal" element={<Personal />} />
+          <Route path="/cursos/nuevo" element={<NuevoCurso />} />
+          <Route path="/cursos/modificar" element={<CursosModif />} />
         </Routes>
       </Router>
     </div>

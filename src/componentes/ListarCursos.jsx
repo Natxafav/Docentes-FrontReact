@@ -5,7 +5,7 @@ import { extraerDatosDeUsuario } from "./Funcionalidad";
 import CursosModif from "./CursosModif";
 import axios from "axios";
 
-const ListarCursos = ({ curso, changeLogin }) => {
+const ListarCursos = ({ curso }) => {
   // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
   const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos/";
   const [userId, setUserId] = useState();
@@ -18,7 +18,7 @@ const ListarCursos = ({ curso, changeLogin }) => {
     opcion: "",
     aula: "",
   });
-  changeLogin();
+
   const checkedChange = (e) => {
     setChecked(!checked);
     setUserId(e.target.value);

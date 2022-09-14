@@ -2,8 +2,7 @@ import React from "react";
 import "./css/formularios.css";
 import Buscar from "./Buscar";
 
-const Inicio = ({ changeLogin }) => {
-  changeLogin();
+const Inicio = () => {
   return (
     <div className="welcome">
       <div className="pantallaInicio">
