@@ -156,7 +156,7 @@
   perspective: 700px;
 }
 .contenSlider {
-  width: 300vw;
+  width: 100vw;
   height: 50vh;
   display: flex;
   align-items: center;

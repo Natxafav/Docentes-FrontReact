@@ -5,6 +5,7 @@
 .App {
   height: max-content;
   width: 100vw;
+  max-width: 100vw;
   list-style: none;
   text-decoration: none;
   min-width: fit-content;
