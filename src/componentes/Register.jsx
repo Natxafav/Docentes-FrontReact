@@ -4,7 +4,6 @@ import "./css/formularios.css";
 import axios from "axios";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
-import { extraerDatosDeUsuario } from "./Funcionalidad";
 
 const Register = ({ changeLogin }) => {
   // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;

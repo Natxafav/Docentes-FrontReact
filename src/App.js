@@ -81,7 +81,7 @@ const App = () => {
         {/* A donde se dirige, el componente */}
 
         <Routes>
-          <Route path="/" element={<Inicio />} />
+          <Route path="/" element={<Inicio changeLogin={changeLogin} />} />
           <Route path="/login" element={<Login changeLogin={changeLogin} />} />
           <Route path="/buscar" element={<Buscar />} />
           <Route

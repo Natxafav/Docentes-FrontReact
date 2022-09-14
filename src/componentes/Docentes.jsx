@@ -3,7 +3,7 @@ import axios from "axios";
 import { useState, useEffect } from "react";
 import ListarDocentes from "./ListarDocentes";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
-import { useNavigate } from "react-router-dom";
+
 import "./css/varios.css";
 
 const Docentes = ({ changeLogin }) => {
@@ -12,7 +12,7 @@ const Docentes = ({ changeLogin }) => {
 
   const [todosDocentes, setTodosDocentes] = useState([]);
   changeLogin();
-  const navegar = useNavigate();
+
   const getDocentes = async () => {
     await axios
       .get(URL, {
