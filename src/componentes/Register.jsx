@@ -37,7 +37,7 @@ const Register = ({ changeLogin }) => {
         console.log(error);
       });
 
-    changeLogin();
+    changeLogin(true);
 
     navegar("/personal");
     setValue("nombre", null);

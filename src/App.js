@@ -21,13 +21,21 @@ import CursosModif from "./componentes/CursosModif";
 import Buscar from "./componentes/Buscar";
 
 const App = () => {
-  const [login, setLogin] = useState(false);
-  const changeLogin = () => {
-    setLogin(true);
-  };
+  // const [login, setLogin] = useState(false);
+  // const changeLogin = () => {
+  //   setLogin(true);
+  // };
 
-  const changeLogout = () => {
-    setLogin(false);
+  // const changeLogout = () => {
+  //   setLogin(false);
+  // };
+
+  const datosUsuario = localStorage.getItem("DatosUsuario");
+  const datosRecuperar = datosUsuario ? JSON.parse(datosUsuario) : null;
+  const [tieneAcceso, setTieneAcceso] = useState(datosRecuperar !== null);
+
+  const changeLogin = (acceder) => {
+    setTieneAcceso(acceder);
   };
 
   return (
@@ -39,7 +47,7 @@ const App = () => {
             <label className="navLabel" htmlFor="checkb">
               <span className="menu-line">&#9776;</span>
             </label>
-            {login === false ? (
+            {tieneAcceso === false ? (
               <ul className="list">
                 <NavLink className={"navlink"} to="/">
                   INICIO
@@ -94,7 +102,7 @@ const App = () => {
           <Route path="/cursos" element={<Cursos />} />
           <Route
             path="/logout"
-            element={<Logout changeLogout={changeLogout} />}
+            element={<Logout changeLogout={changeLogin} />}
           />
           <Route path="/personal" element={<Personal />} />
           <Route path="/cursos/nuevo" element={<NuevoCurso />} />
