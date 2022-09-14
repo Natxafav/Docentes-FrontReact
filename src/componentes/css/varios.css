@@ -3,7 +3,8 @@
 .mapcursos,
 .mapdocente {
   width: 95vw;
-  height: max-content;
+  min-height: 100vh;
+  height: fit-content;
   display: flex;
   align-items: center;
   justify-content: space-between;
