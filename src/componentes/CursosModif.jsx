@@ -36,6 +36,7 @@ const CursosModif = ({ cursoConcreto }) => {
       .then((response) => {})
       .catch((error) => {});
     navegar("/cursos");
+    window.location.reload();
   };
 
   useEffect(() => {
