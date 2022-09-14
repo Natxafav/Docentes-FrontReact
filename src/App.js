@@ -22,11 +22,11 @@ import Buscar from "./componentes/Buscar";
 
 const App = () => {
   const [login, setLogin] = useState();
-  const changeLogin = (e) => {
+  const changeLogin = () => {
     setLogin(true);
   };
 
-  const changeLogout = (e) => {
+  const changeLogout = () => {
     setLogin(false);
   };
 
