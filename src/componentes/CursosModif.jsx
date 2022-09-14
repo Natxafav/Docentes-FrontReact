@@ -18,6 +18,7 @@ const CursosModif = ({ cursoConcreto }) => {
   const [precios, setPrecios] = useState(cursoConcreto.precio);
 
   const modificarCurso = async (e) => {
+    e.preventDefault();
     await axios
       .patch(
         URL + cursoConcreto._id,
@@ -34,6 +35,7 @@ const CursosModif = ({ cursoConcreto }) => {
       )
       .then((response) => {})
       .catch((error) => {});
+    navegar("/cursos");
   };
 
   useEffect(() => {
@@ -43,7 +45,8 @@ const CursosModif = ({ cursoConcreto }) => {
     setPrecios(cursoConcreto.precio);
   }, [cursoConcreto]);
 
-  const eliminarCurso = async () => {
+  const eliminarCurso = async (e) => {
+    e.preventDefault();
     await axios
       .delete(URL + id, {
         headers: {
@@ -55,6 +58,7 @@ const CursosModif = ({ cursoConcreto }) => {
         console.log(error.response.data);
       });
     navegar("/cursos");
+    window.location.reload();
   };
 
   const gestorCurso = (e) => {
@@ -74,7 +78,12 @@ const CursosModif = ({ cursoConcreto }) => {
   return (
     <div className="form-cursosmod">
       <div className="form-modif-curso">
-        <form action="#" className="form-modif curso">
+        <form
+          action="#"
+          className="form-modif curso"
+          onSubmit={modificarCurso}
+          onReset={eliminarCurso}
+        >
           <input
             className="nombreCursoModif"
             onChange={gestorCurso}
@@ -119,13 +128,17 @@ const CursosModif = ({ cursoConcreto }) => {
           />
           <div className="cont BotonModif">
             <button
-              type="button"
+              type="submit"
               className="botonModif modif"
-              onClick={modificarCurso}
+              // onClick={modificarCurso}
             >
               {<FaEdit className="imgBoton" />}
             </button>
-            <button className="botonModif eliminar" onClick={eliminarCurso}>
+            <button
+              type="reset"
+              className="botonModif eliminar"
+              // onClick={eliminarCurso}
+            >
               {<FaTrash className="imgBoton" />}
             </button>
           </div>

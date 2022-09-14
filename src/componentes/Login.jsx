@@ -32,6 +32,7 @@ const Login = ({ changeLogin }) => {
               email: resp.data.email,
             })
           );
+          changeLogin(resp.data);
         }
       })
       .catch((error) => {
@@ -41,13 +42,8 @@ const Login = ({ changeLogin }) => {
     if (email.trim() === "" || pass.trim() === "") {
       return;
     }
-    if (localStorage.getItem("DatosUsuario")) {
-      changeLogin(true);
-    } else {
-      changeLogin(false);
-    }
 
-    navegar("/personal");
+    navegar("/");
     setEmail("");
     setPass("");
   };
@@ -61,7 +57,7 @@ const Login = ({ changeLogin }) => {
 
   return (
     <div className="login-page">
-      <form className="form-container login" action="#">
+      <form className="form-container login" action="#" onSubmit={usuLogin}>
         <label className="label-container login"></label>
 
         <input
@@ -86,7 +82,7 @@ const Login = ({ changeLogin }) => {
         ></input>
 
         <div className="button-container login">
-          <button className="enviar" onClick={usuLogin}>
+          <button type="submit" className="enviar">
             LOGIN
           </button>
         </div>

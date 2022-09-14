@@ -59,7 +59,11 @@ const ListarDocentes = ({ docente }) => {
               value={docente._id}
               onClick={checkedChange}
             ></input>
-            <button className="botonModif curso" onClick={getDocente}>
+            <button
+              type="button"
+              className="botonModif curso"
+              onClick={getDocente}
+            >
               Buscar Datos
             </button>
           </div>

@@ -18,16 +18,22 @@ import Personal from "./componentes/Personal";
 import { useState } from "react";
 import NuevoCurso from "./componentes/NuevoCurso";
 import CursosModif from "./componentes/CursosModif";
-
 import Buscar from "./componentes/Buscar";
 
 const App = () => {
-  const [login, setLogin] = useState(false);
+  const [login, setLogin] = useState();
+  const [token, setToken] = useState([]);
+  console.log(login);
+
   const changeLogin = (e) => {
-    setLogin(e);
+    setToken(e.token);
+    setLogin(true);
   };
+
+  console.log(login);
   const changeLogout = (e) => {
-    setLogin(e);
+    setLogin(false);
+    setToken([]);
   };
 
   return (
@@ -39,7 +45,7 @@ const App = () => {
             <label className="navLabel" htmlFor="checkb">
               <span className="menu-line">&#9776;</span>
             </label>
-            {!login ? (
+            {login === false ? (
               <ul className="list">
                 <NavLink className={"navlink"} to="/">
                   INICIO

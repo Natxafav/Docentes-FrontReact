@@ -17,9 +17,6 @@ const NuevoCurso = () => {
   } = useForm();
 
   const crearCurso = async (e) => {
-    console.log(extraerDatosDeUsuario()[0] + "    login supuesto");
-    console.log(e);
-
     await axios
       .post(
         URL,
@@ -34,9 +31,7 @@ const NuevoCurso = () => {
           headers: { Authorization: "Bearer " + extraerDatosDeUsuario()[1] },
         }
       )
-      .then((res) => {
-        console.log("esta es mi respeuestasdadf" + res);
-      })
+      .then((res) => {})
       .catch((error) => {
         console.log(error.message);
       });

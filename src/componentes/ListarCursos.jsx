@@ -66,7 +66,11 @@ const ListarCursos = ({ curso }) => {
             value={curso._id}
             onClick={checkedChange}
           ></input>
-          <button className="botonModif curso" onClick={getCursos}>
+          <button
+            type="submit"
+            className="botonModif curso"
+            onClick={getCursos}
+          >
             Buscar Datos
           </button>
         </div>

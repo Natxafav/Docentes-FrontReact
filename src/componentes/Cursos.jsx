@@ -5,7 +5,6 @@ import { extraerDatosDeUsuario } from "./Funcionalidad";
 import ListarCursos from "./ListarCursos";
 import { useNavigate } from "react-router-dom";
 import "./css/varios.css";
-import Buscar from "./Buscar";
 
 const Cursos = () => {
   // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
