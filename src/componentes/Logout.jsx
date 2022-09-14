@@ -10,7 +10,7 @@ const Logout = ({ changeLogout }) => {
     localStorage.removeItem("DatosUsuario");
     navegar("/");
 
-    changeLogout(extraerDatosDeUsuario());
+    changeLogout();
   };
 
   useEffect(() => {

@@ -6,12 +6,12 @@ import { extraerDatosDeUsuario } from "./Funcionalidad";
 import { useNavigate } from "react-router-dom";
 import "./css/varios.css";
 
-const Docentes = () => {
+const Docentes = ({ changeLogin }) => {
   // const URL = `${process.env.REACT_APP_BACKEND_URL}/docentes/`;
   const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/docentes/";
 
   const [todosDocentes, setTodosDocentes] = useState([]);
-
+  changeLogin();
   const navegar = useNavigate();
   const getDocentes = async () => {
     await axios

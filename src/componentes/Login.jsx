@@ -32,7 +32,7 @@ const Login = ({ changeLogin }) => {
               email: resp.data.email,
             })
           );
-          changeLogin(resp.data);
+          changeLogin();
         }
       })
       .catch((error) => {

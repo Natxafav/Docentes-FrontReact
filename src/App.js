@@ -22,18 +22,12 @@ import Buscar from "./componentes/Buscar";
 
 const App = () => {
   const [login, setLogin] = useState();
-  const [token, setToken] = useState([]);
-  console.log(login);
-
   const changeLogin = (e) => {
-    setToken(e.token);
     setLogin(true);
   };
 
-  console.log(login);
   const changeLogout = (e) => {
     setLogin(false);
-    setToken([]);
   };
 
   return (
@@ -96,15 +90,30 @@ const App = () => {
           />
           <Route path="/404" element={<Error />} />
           <Route path="*" element={<Navigate to="/404" replace />} />
-          <Route path="/docentes" element={<Docentes />} />
-          <Route path="/cursos" element={<Cursos />} />
+          <Route
+            path="/docentes"
+            element={<Docentes changeLogin={changeLogin} />}
+          />
+          <Route
+            path="/cursos"
+            element={<Cursos changeLogin={changeLogin} />}
+          />
           <Route
             path="/logout"
             element={<Logout changeLogout={changeLogout} />}
           />
-          <Route path="/personal" element={<Personal />} />
-          <Route path="/cursos/nuevo" element={<NuevoCurso />} />
-          <Route path="/cursos/modificar" element={<CursosModif />} />
+          <Route
+            path="/personal"
+            element={<Personal changeLogin={changeLogin} />}
+          />
+          <Route
+            path="/cursos/nuevo"
+            element={<NuevoCurso changeLogin={changeLogin} />}
+          />
+          <Route
+            path="/cursos/modificar"
+            element={<CursosModif changeLogin={changeLogin} />}
+          />
         </Routes>
       </Router>
     </div>

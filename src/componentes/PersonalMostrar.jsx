@@ -1,6 +1,6 @@
 import React from "react";
 import "./css/varios.css";
-const PersonalMostrar = ({ dato }) => {
+const PersonalMostrar = ({ dato, changeLogin }) => {
   const docente = dato.cursos.map((dato) => {
     return (
       <div className="cursosDocente" key={dato._id}>
@@ -8,7 +8,7 @@ const PersonalMostrar = ({ dato }) => {
       </div>
     );
   });
-
+  changeLogin();
   return (
     <div className="docenteMostrar">
       <div className="etiquetas">Nombre: </div>

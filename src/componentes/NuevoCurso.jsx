@@ -5,7 +5,7 @@ import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { extraerDatosDeUsuario } from "./Funcionalidad";
 
-const NuevoCurso = () => {
+const NuevoCurso = ({ changeLogin }) => {
   // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
   const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos/";
   const navegar = useNavigate();
@@ -15,7 +15,7 @@ const NuevoCurso = () => {
     handleSubmit,
     formState: { errors },
   } = useForm();
-
+  changeLogin();
   const crearCurso = async (e) => {
     await axios
       .post(

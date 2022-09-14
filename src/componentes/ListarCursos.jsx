@@ -5,11 +5,12 @@ import { extraerDatosDeUsuario } from "./Funcionalidad";
 import CursosModif from "./CursosModif";
 import axios from "axios";
 
-const ListarCursos = ({ curso }) => {
+const ListarCursos = ({ curso, changeLogin }) => {
   // const URL = `${process.env.REACT_APP_BACKEND_URL}/cursos/`;
   const URL = "https://winged-carrier-361708.oa.r.appspot.com/api/cursos/";
   const [userId, setUserId] = useState();
   const [checked, setChecked] = useState(false);
+
   const [cursoConcreto, setCursoConcreto] = useState({
     _id: null,
     curso: "",
@@ -17,7 +18,7 @@ const ListarCursos = ({ curso }) => {
     opcion: "",
     aula: "",
   });
-
+  changeLogin();
   const checkedChange = (e) => {
     setChecked(!checked);
     setUserId(e.target.value);

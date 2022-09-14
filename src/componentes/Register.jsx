@@ -38,7 +38,7 @@ const Register = ({ changeLogin }) => {
         console.log(error);
       });
 
-    changeLogin(extraerDatosDeUsuario());
+    changeLogin();
 
     navegar("/personal");
     setValue("nombre", null);
